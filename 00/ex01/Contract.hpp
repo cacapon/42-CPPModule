@@ -16,6 +16,7 @@ class Contract
 	std::string darkest_secret_;
 
   public:
+	Contract();
 	Contract(
 		std::string first_name,
 		std::string last_name,
