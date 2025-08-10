@@ -124,6 +124,5 @@ void PhoneBook::mainPrompt()
 		if	   (cmd == "ADD")		add();
 		else if(cmd == "SEARCH")	search();
 		else if(cmd == "EXIT")		break;
-		std::cout << "\n";
 	}
 }
