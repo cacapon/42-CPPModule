@@ -91,6 +91,7 @@ void PhoneBook::searchPrompt()
 
 	std::cout << "index?>";
 	std::cin >> index;
+	std::cin.ignore(10000, '\n');
 	if (0 <= index && index < count_)
 		showContractDetails(index);
 	else
