@@ -22,8 +22,10 @@ class PhoneBook
 	std::string formatField(std::string data);
 	void	printHeader();
 	void	printEntry();
+	void	searchPrompt();
+	void 	showContractDetails(int index);
 
   public:
 	PhoneBook();
-	void prompt();
+	void mainPrompt();
 };

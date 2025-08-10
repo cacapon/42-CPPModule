@@ -5,6 +5,13 @@
 
 #include "PhoneBook.hpp"
 
+std::string PhoneBook::formatField(std::string data)
+{
+	if (data.length() > 10)
+		return (data.substr(0,9) + ".");
+	return (data);
+}
+
 void PhoneBook::add()
 {
 	std::string data[5];
@@ -27,8 +34,14 @@ void PhoneBook::add()
 }
 void PhoneBook::search()
 {
+	if (count_ == 0)
+	{
+		std::cout << "No data.\n";
+		return ;
+	}
 	printHeader();
 	printEntry();
+	searchPrompt();
 }
 
 void PhoneBook::printHeader()
@@ -56,11 +69,26 @@ void PhoneBook::printEntry()
 	}
 }
 
-std::string PhoneBook::formatField(std::string data)
+void PhoneBook::searchPrompt()
 {
-	if (data.length() > 10)
-		return (data.substr(0,9) + ".");
-	return (data);
+	int	index;
+
+	std::cout << "index?>";
+	std::cin >> index;
+	if (0 <= index && index < count_)
+		showContractDetails(index);
+	else
+		std::cout << "Invalid Index\n";
+}
+
+void PhoneBook::showContractDetails(int index)
+{
+	std::cout
+		<< "first name"		<< ":" << contracts_[index].first_name() 		<< "\n"
+		<< "last name"		<< ":" << contracts_[index].last_name() 		<< "\n"
+		<< "nickname"		<< ":" << contracts_[index].nickname() 			<< "\n"
+		<< "phone number"	<< ":" << contracts_[index].phone_num() 		<< "\n"
+		<< "darkest secret"	<< ":" << contracts_[index].darkest_secret()	<< "\n";
 }
 
 PhoneBook::PhoneBook()
@@ -69,7 +97,7 @@ PhoneBook::PhoneBook()
 	c_i_ = 0;
 }
 
-void PhoneBook::prompt()
+void PhoneBook::mainPrompt()
 {
 	std::string cmd;
 
@@ -77,8 +105,8 @@ void PhoneBook::prompt()
 	{
 		std::cout << "cmd?>";
 		std::cin >> cmd;
-		if	   (cmd == "ADD")		this->add();
-		else if(cmd == "SEARCH")	this->search();
+		if	   (cmd == "ADD")		add();
+		else if(cmd == "SEARCH")	search();
 		else if(cmd == "EXIT")		break;
 		std::cout << "\n";
 	}

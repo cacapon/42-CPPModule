@@ -9,6 +9,6 @@ int	main(void)
 {
 	PhoneBook	phone_book;
 
-	phone_book.prompt();
+	phone_book.mainPrompt();
 	return (0);
 }
