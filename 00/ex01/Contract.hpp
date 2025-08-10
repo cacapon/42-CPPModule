@@ -1,6 +1,6 @@
 /**
  * @file Contract.hpp
- * @brief
+ * @brief Data class for managing contact information.
  */
 
 #pragma once
