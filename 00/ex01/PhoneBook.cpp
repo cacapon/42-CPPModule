@@ -12,26 +12,41 @@ std::string PhoneBook::formatField(std::string data)
 	return (data);
 }
 
+std::string PhoneBook::getPromptStr(std::string prompt)
+{
+	std::string data = "";
+
+	while(true)
+	{
+		std::cout << prompt << ">";
+		if (!std::getline(std::cin, data))
+		{
+			if (std::cin.eof())
+				return ("EXIT");
+			std::cin.clear();
+			continue;
+		}
+		if (data.find_first_not_of(" \t\n\r\f\v") == std::string::npos)
+			continue;
+		return (data);
+	}
+}
+
 void PhoneBook::add()
 {
 	std::string data[5];
 
-	std::cout << "first name?:";
-	std::cin >> data[0];
-	std::cout << "last name?:";
-	std::cin >> data[1];
-	std::cout << "nickname?:";
-	std::cin >> data[2];
-	std::cout << "phone number?:";
-	std::cin >> data[3];
-	std::cout << "darkest secret?:";
-	std::cin >> data[4];
-
+	data[0] = getPromptStr("first name?");
+	data[1] = getPromptStr("last name?");
+	data[2] = getPromptStr("nickname?");
+	data[3] = getPromptStr("phone number?");
+	data[4] = getPromptStr("darkest secret?");
 	Contract c(data[0],data[1],data[2],data[3],data[4]);
 	contracts_[c_i_] = c;
 	c_i_ = (c_i_ + 1) % kMaxContracts;
 	if(count_ < kMaxContracts) count_++;	
 }
+
 void PhoneBook::search()
 {
 	if (count_ == 0)
@@ -101,10 +116,9 @@ void PhoneBook::mainPrompt()
 {
 	std::string cmd;
 
-	while(1)
+	while(true)
 	{
-		std::cout << "cmd?>";
-		std::cin >> cmd;
+		cmd = getPromptStr("cmd?");
 		if	   (cmd == "ADD")		add();
 		else if(cmd == "SEARCH")	search();
 		else if(cmd == "EXIT")		break;

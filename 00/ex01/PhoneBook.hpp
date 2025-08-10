@@ -20,6 +20,7 @@ class PhoneBook
 	void search();
 	
 	std::string formatField(std::string data);
+	std::string getPromptStr(std::string prompt);
 	void	printHeader();
 	void	printEntry();
 	void	searchPrompt();
