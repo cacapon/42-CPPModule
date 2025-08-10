@@ -18,7 +18,8 @@ std::string PhoneBook::getPromptStr(std::string prompt)
 
 	while(true)
 	{
-		std::cout << prompt << ">";
+		if (!std::cin.eof())
+			std::cout << prompt << ">";
 		if (!std::getline(std::cin, data))
 		{
 			if (std::cin.eof())
