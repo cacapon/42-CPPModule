@@ -5,7 +5,9 @@
 
 #pragma once
 #include "Contract.hpp"
+#include <string>
 #include <iostream>
+#include <iomanip>
 
 class PhoneBook
 {
@@ -16,6 +18,10 @@ class PhoneBook
 	int c_i_;
 	void add();
 	void search();
+	
+	std::string formatField(std::string data);
+	void	printHeader();
+	void	printEntry();
 
   public:
 	PhoneBook();

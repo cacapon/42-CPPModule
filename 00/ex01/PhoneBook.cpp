@@ -27,18 +27,40 @@ void PhoneBook::add()
 }
 void PhoneBook::search()
 {
+	printHeader();
+	printEntry();
+}
+
+void PhoneBook::printHeader()
+{
+	std::cout
+		<< std::setw(10) << "Index" 	<< "|"
+		<< std::setw(10) << "FirstName" << "|"
+		<< std::setw(10) << "LastName" 	<< "|"
+		<< std::setw(10) << "NickName" 	<< "\n";
+}
+
+void PhoneBook::printEntry()
+{
 	int i;
 
 	i = 0;
 	while (i < count_)
 	{
 		std::cout
-			<< i << " "
-			<< "[" << contracts_[i].first_name() << "] "
-			<< "[" << contracts_[i].last_name() << "] "
-			<< "[" << contracts_[i].nickname()  << "]\n";
+			<< std::setw(10) << i 										<< "|"
+			<< std::setw(10) << formatField(contracts_[i].first_name()) << "|"
+			<< std::setw(10) << formatField(contracts_[i].last_name())	<< "|"
+			<< std::setw(10) << formatField(contracts_[i].nickname())	<< "\n";
 		i++;
 	}
+}
+
+std::string PhoneBook::formatField(std::string data)
+{
+	if (data.length() > 10)
+		return (data.substr(0,9) + ".");
+	return (data);
 }
 
 PhoneBook::PhoneBook()
