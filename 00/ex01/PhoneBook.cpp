@@ -27,19 +27,17 @@ void PhoneBook::add()
 }
 void PhoneBook::search()
 {
-	int visual_i;
-	int start;
+	int i;
 
-	visual_i = 0;
-	start = c_i_;
-	while (visual_i < count_)
+	i = 0;
+	while (i < count_)
 	{
-		std::cout << visual_i << " ";
-		std::cout << contracts_[start].first_name() << " ";
-		std::cout << contracts_[start].last_name() << " ";
-		std::cout << contracts_[start].nickname();
-		start = (start + 1) % kMaxContracts;
-		visual_i++;
+		std::cout
+			<< i << " "
+			<< "[" << contracts_[i].first_name() << "] "
+			<< "[" << contracts_[i].last_name() << "] "
+			<< "[" << contracts_[i].nickname()  << "]\n";
+		i++;
 	}
 }
 
