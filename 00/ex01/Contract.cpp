@@ -6,16 +6,15 @@
 #include "Contract.hpp"
 
 Contract::Contract(
-	const std::string& first_name,
-	const std::string& last_name,
-	const std::string& nickname,
-	const std::string& phone_num, 
-	const std::string& darkest_secret
+	std::string first,
+	std::string last,
+	std::string nick,
+	std::string phone, 
+	std::string secret
 )
-	: first_name_(first_name),
-	  last_name_(last_name),
-	  nickname_(nickname),
-	  phone_num_(phone_num),
-	  darkest_secret_(darkest_secret)
-{
-}
+	: first_name_(std::move(first)),
+	  last_name_(std::move(last)),
+	  nickname_(std::move(nick)),
+	  phone_num_(std::move(phone)),
+	  darkest_secret_(std::move(secret))
+{}

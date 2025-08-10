@@ -9,19 +9,19 @@
 class Contract
 {
   private:
-	const std::string first_name_;
-	const std::string last_name_;
-	const std::string nickname_;
-	const std::string phone_num_;
-	const std::string darkest_secret_;
+	std::string first_name_;
+	std::string last_name_;
+	std::string nickname_;
+	std::string phone_num_;
+	std::string darkest_secret_;
 
   public:
 	Contract(
-		const std::string& first_name,
-		const std::string& last_name,
-		const std::string& nickname,
-		const std::string& phone_num,
-		const std::string& darkest_secret
+		std::string first_name,
+		std::string last_name,
+		std::string nickname,
+		std::string phone_num,
+		std::string darkest_secret
 	);
 	const std::string& first_name() 	const { return first_name_; 	};
 	const std::string& last_name()		const { return last_name_;		};
