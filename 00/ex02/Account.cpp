@@ -6,11 +6,14 @@
 /*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:06:21 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/08/15 10:50:38 by ttsubo           ###   ########.fr       */
+/*   Updated: 2025/08/15 11:05:03 by ttsubo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Account.hpp>
+#include <iostream>
+#include <string>
+#include <ctime>
+#include "Account.hpp"
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -64,7 +67,22 @@ void Account::displayStatus() const
 
 void Account::_displayTimestamp()
 {
-	//TODO
+	std::time_t now = std::time(NULL);
+	std::tm *lt = std::localtime(&now);
+
+    std::cout << "[";
+    std::cout << (lt->tm_year + 1900);
+    if (lt->tm_mon + 1 < 10) std::cout << "0";
+    std::cout << (lt->tm_mon + 1);
+    if (lt->tm_mday < 10) std::cout << "0";
+    std::cout << lt->tm_mday << "_";
+    if (lt->tm_hour < 10) std::cout << "0";
+    std::cout << lt->tm_hour;
+    if (lt->tm_min < 10) std::cout << "0";
+    std::cout << lt->tm_min;
+    if (lt->tm_sec < 10) std::cout << "0";
+    std::cout << lt->tm_sec;
+    std::cout << "] ";
 }
 Account::Account()
 {}
