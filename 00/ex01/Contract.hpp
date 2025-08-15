@@ -3,7 +3,9 @@
  * @brief Data class for managing contact information.
  */
 
-#pragma once
+#ifndef CONTRACT_HPP
+#define CONTRACT_HPP
+
 #include <string>
 
 class Contract
@@ -18,11 +20,11 @@ class Contract
   public:
 	Contract();
 	Contract(
-		std::string first_name,
-		std::string last_name,
-		std::string nickname,
-		std::string phone_num,
-		std::string darkest_secret
+		std::string& first_name,
+		std::string& last_name,
+		std::string& nickname,
+		std::string& phone_num,
+		std::string& darkest_secret
 	);
 	const std::string& first_name() 	const { return first_name_; 	};
 	const std::string& last_name()		const { return last_name_;		};
@@ -30,3 +32,5 @@ class Contract
 	const std::string& phone_num()		const { return phone_num_;		};
 	const std::string& darkest_secret() const { return darkest_secret_;	};
 };
+
+#endif

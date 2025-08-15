@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @brief
+ * @brief Launch the phone book prompt.
  */
 
 #include "PhoneBook.hpp"
