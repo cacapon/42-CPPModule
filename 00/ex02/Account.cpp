@@ -6,7 +6,7 @@
 /*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:06:21 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/09/16 10:55:04 by ttsubo           ###   ########.fr       */
+/*   Updated: 2025/09/16 10:56:07 by ttsubo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ void Account::displayStatus() const
 		<< "amount:" << _amount << ";"
 		<< "deposits:" << _nbDeposits << ";"
 		<< "withdrawals:" << _nbWithdrawals << "\n";
+	_nbAccounts--;
+	_totalAmount -= _amount;
 }
 
 /* private */
