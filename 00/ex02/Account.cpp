@@ -6,7 +6,7 @@
 /*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:06:21 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/09/16 10:50:45 by ttsubo           ###   ########.fr       */
+/*   Updated: 2025/09/16 10:55:04 by ttsubo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	Account::displayAccountsInfos()
 Account::Account(int initial_deposit)
 {
 	_amount = initial_deposit;
+	_nbDeposits = 0;
+	_nbWithdrawals = 0;
 	_totalAmount += _amount;
 	_accountIndex = _nbAccounts;
 	_displayTimestamp();
@@ -55,7 +57,7 @@ Account::~Account()
 	_displayTimestamp();
 	std::cout
 		<< "index:" << _accountIndex << ";"
-		<< "amount:" << _amount << ";closed\n";	
+		<< "amount:" << _amount << ";closed\n";
 }
 
 void Account::makeDeposit(int deposit)
