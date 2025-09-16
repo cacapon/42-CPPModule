@@ -6,7 +6,7 @@
 /*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:06:21 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/09/16 10:56:07 by ttsubo           ###   ########.fr       */
+/*   Updated: 2025/09/16 10:57:27 by ttsubo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,12 @@ void Account::makeDeposit(int deposit)
 
 bool Account::makeWithdrawal(int withdrawal)
 {
+	int amount = checkAmount();
+
 	_displayTimestamp();
 	std::cout
 		<< "index:" << _accountIndex << ";"
-		<< "p_amount:" << checkAmount() << ";"
+		<< "p_amount:" << amount << ";"
 		<< "withdrawal:";
 	if (checkAmount() < withdrawal)
 	{
@@ -89,7 +91,7 @@ bool Account::makeWithdrawal(int withdrawal)
 	else
 		std::cout
 			<< withdrawal << ";"
-			<< "amount:" << checkAmount() - withdrawal << ";"
+			<< "amount:" << amount - withdrawal << ";"
 			<< "nb_withdrawals:" << ++_nbWithdrawals << "\n";
 	_totalAmount -= withdrawal;
 	_amount -= withdrawal;
