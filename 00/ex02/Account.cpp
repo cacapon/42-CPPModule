@@ -6,7 +6,7 @@
 /*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:06:21 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/09/16 11:02:49 by ttsubo           ###   ########.fr       */
+/*   Updated: 2025/09/16 11:05:32 by ttsubo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ Account::~Account()
 		<< "index:" << _accountIndex << ";"
 		<< "amount:" << _amount << ";closed\n";
 	_totalAmount -= _amount;
+	_nbAccounts--;
 }
 
 void Account::makeDeposit(int deposit)
@@ -84,7 +85,7 @@ bool Account::makeWithdrawal(int withdrawal)
 		<< "index:" << _accountIndex << ";"
 		<< "p_amount:" << amount << ";"
 		<< "withdrawal:";
-	if (checkAmount() < withdrawal)
+	if (amount < withdrawal)
 	{
 		std::cout << "refused\n";
 		return (false);
@@ -113,7 +114,6 @@ void Account::displayStatus() const
 		<< "amount:" << _amount << ";"
 		<< "deposits:" << _nbDeposits << ";"
 		<< "withdrawals:" << _nbWithdrawals << "\n";
-	_nbAccounts--;
 }
 
 /* private */
