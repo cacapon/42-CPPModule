@@ -6,7 +6,7 @@
 /*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:06:21 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/09/16 10:16:34 by ttsubo           ###   ########.fr       */
+/*   Updated: 2025/09/16 10:50:45 by ttsubo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,16 @@ Account::~Account()
 
 void Account::makeDeposit(int deposit)
 {
-	_totalNbDeposits++;
-	_nbDeposits++;
 	_displayTimestamp();
 	std::cout
 		<< "index:" << _accountIndex << ";"
 		<< "p_amount:" << checkAmount() << ";"
 		<< "deposit:" << deposit << ";"
 		<< "amount:" << _amount + deposit << ";"
-		<< "nb_deposits:" << 1 << "\n";
+		<< "nb_deposits:" << ++_nbDeposits << "\n";
 	_amount += deposit;
 	_totalAmount += deposit;
+	_totalNbDeposits++;
 }
 
 bool Account::makeWithdrawal(int withdrawal)
@@ -89,9 +88,8 @@ bool Account::makeWithdrawal(int withdrawal)
 		std::cout
 			<< withdrawal << ";"
 			<< "amount:" << checkAmount() - withdrawal << ";"
-			<< "nb_withdrawals:" << 1 << "\n";
+			<< "nb_withdrawals:" << ++_nbWithdrawals << "\n";
 	_totalAmount -= withdrawal;
-	_nbWithdrawals++;
 	_amount -= withdrawal;
 	_totalNbWithdrawals++;
 	return (true);
