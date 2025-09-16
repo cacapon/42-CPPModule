@@ -6,7 +6,7 @@
 /*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:06:21 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/08/15 11:54:20 by ttsubo           ###   ########.fr       */
+/*   Updated: 2025/09/16 09:35:13 by ttsubo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	Account::displayAccountsInfos()
 		<< "accounts:" << getNbAccounts() << ";"
 		<< "total:" << getTotalAmount() << ";"
 		<< "deposits:" << getNbDeposits() << ";"
-		<< "withdrawals:" << getNbWithdrawals() << ";\n";
+		<< "withdrawals:" << getNbWithdrawals() << "\n";
 }
 
 Account::Account(int initial_deposit)
@@ -62,7 +62,7 @@ void Account::makeDeposit(int deposit)
 		<< "p_amount:" << checkAmount() << ";"
 		<< "deposit:" << deposit << ";"
 		<< "amount:" << deposit + _amount << ";"
-		<< "withdrawals:" << getNbWithdrawals() << ";\n";
+		<< "withdrawals:" << getNbWithdrawals() << "\n";
 }
 
 bool Account::makeWithdrawal(int withdrawal)
@@ -83,7 +83,7 @@ void Account::displayStatus() const
 		<< "index:" << _accountIndex << ";"
 		<< "amount:" << _amount << ";"
 		<< "deposits:" << _nbDeposits << ";"
-		<< "withdrawals:" << _nbWithdrawals << ";\n";
+		<< "withdrawals:" << _nbWithdrawals << "\n";
 }
 
 /* private */
