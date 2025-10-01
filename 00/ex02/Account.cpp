@@ -1,14 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:06:21 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/09/16 11:05:32 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file Account.cpp
+ * @brief 
+ */
 
 #include <iostream>
 #include <string>
@@ -20,15 +13,11 @@ int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-int Account::getNbAccounts()	{ return _nbAccounts; }
-int Account::getTotalAmount()	{ return _totalAmount; }
-int Account::getNbDeposits()	{ return _totalNbDeposits; }
-int	Account::getNbWithdrawals()	{ return _totalNbWithdrawals; }
-
-/**
- * @brief display,acounts,total, deposits and withdrawals.
- * 
- */
+/* static functions */
+int 	Account::getNbAccounts()	{ return _nbAccounts; }
+int 	Account::getTotalAmount()	{ return _totalAmount; }
+int 	Account::getNbDeposits()	{ return _totalNbDeposits; }
+int		Account::getNbWithdrawals()	{ return _totalNbWithdrawals; }
 void	Account::displayAccountsInfos()
 {
 	_displayTimestamp();
@@ -39,6 +28,7 @@ void	Account::displayAccountsInfos()
 		<< "withdrawals:" << getNbWithdrawals() << "\n";
 }
 
+/* constracotor and destractor */
 Account::Account(int initial_deposit)
 {
 	_amount = initial_deposit;
@@ -52,6 +42,7 @@ Account::Account(int initial_deposit)
 		<< "amount:" << _amount << ";created\n";
 	_nbAccounts++;
 }
+
 Account::~Account() 
 {
 	_displayTimestamp();
@@ -62,6 +53,13 @@ Account::~Account()
 	_nbAccounts--;
 }
 
+/* public functions */
+
+/**
+ * @brief Add funds to the deposit account.
+ * 
+ * @param deposit 
+ */
 void Account::makeDeposit(int deposit)
 {
 	_displayTimestamp();
@@ -76,6 +74,13 @@ void Account::makeDeposit(int deposit)
 	_totalNbDeposits++;
 }
 
+/**
+ * @brief Withdraw money from the savings account.
+ * 
+ * @param withdrawal 
+ * @return true : The withdrawal from the deposit account was successful.
+ * @return false: Insufficient funds caused the withdrawal to fail.
+ */
 bool Account::makeWithdrawal(int withdrawal)
 {
 	int amount = checkAmount();
@@ -101,11 +106,21 @@ bool Account::makeWithdrawal(int withdrawal)
 	return (true);
 }
 
+/**
+ * @brief Ammont getter.
+ * 
+ * @return int : amount
+ */
 int Account::checkAmount() const
 {
 	return (_amount);
 }
 
+/**
+ * @brief Outputs the account 
+ * status (index, amount, deposits, withdrawals) to the console.
+ * 
+ */
 void Account::displayStatus() const
 {
 	_displayTimestamp();
@@ -116,8 +131,12 @@ void Account::displayStatus() const
 		<< "withdrawals:" << _nbWithdrawals << "\n";
 }
 
-/* private */
+/* private functions */
 
+/**
+ * @brief Outputs the current time to the console in [YYYMMDD_hhmmss] format.
+ * 
+ */
 void Account::_displayTimestamp()
 {
 	std::time_t now = std::time(NULL);
@@ -137,5 +156,5 @@ void Account::_displayTimestamp()
     std::cout << lt->tm_sec;
     std::cout << "] ";
 }
-Account::Account()
-{}
+
+/* @hint Account(void) is an uncalled constructor, so implementation is unnecessary. */

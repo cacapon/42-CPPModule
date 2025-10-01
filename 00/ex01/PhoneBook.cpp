@@ -1,5 +1,6 @@
 /**
  * @file PhoneBook.cpp
+ * @brief A primitive phone book class that works with three commands.
  */
 
 #include "PhoneBook.hpp"
