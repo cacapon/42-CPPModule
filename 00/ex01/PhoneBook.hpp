@@ -1,6 +1,6 @@
 /**
  * @file PhoneBook.hpp
- * @brief A primitive phone book class that works with three commands
+ * @brief A primitive phone book class that works with three commands.
  */
 
 #ifndef PHONEBOOK_HPP

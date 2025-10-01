@@ -1,5 +1,6 @@
 /**
  * @file Contract.cpp
+ * @brief Data class for managing contact information.
  */
 
 #include "Contract.hpp"
