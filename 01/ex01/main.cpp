@@ -1,12 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:09:12 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:09:13 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file main.cpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief 
+ * 
+ * 
+ */
 
+#include "Zombie.hpp"
+
+int main(void) {
+    const int N = 100;
+    Zombie *horde;
+
+    horde = zombieHorde(N, "zombie");
+    for (int i=0; i<N; i++) {
+        horde[i].announce();
+    }
+    delete[] horde;
+    return (0);
+}

@@ -1,12 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:12:11 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:12:12 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file zombieHorde.cpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief 
+ * 
+ * 
+ */
 
+#include "Zombie.hpp"
+
+Zombie* zombieHorde(int N, std::string name)
+{
+    Zombie *zombies = new Zombie[N];
+
+    for (int i=0; i<N; i++) {
+        zombies[i].setName(name);
+    }
+    return (zombies);
+}
