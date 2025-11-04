@@ -1,12 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:11:01 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:11:03 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file newZombie.cpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief 
+ */
 
+#include "Zombie.hpp"
+
+Zombie *newZombie(std::string name)
+{
+    return new Zombie(name);
+}

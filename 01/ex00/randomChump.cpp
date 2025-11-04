@@ -1,12 +1,17 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:11:04 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:11:05 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file randomChump.cpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief 
+ * 
+ * 
+ */
 
+#include "Zombie.hpp"
+
+void randomChump(std::string name)
+{
+    Zombie *zombie;
+    zombie = new Zombie(name);
+    zombie->announce();
+    delete zombie;
+}
