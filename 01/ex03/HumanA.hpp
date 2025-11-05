@@ -1,12 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:13:31 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:13:32 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file HumanA.hpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief He carries weapons via the constructor.
+ *        He is always armed. 
+ * 
+ */
 
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+# include <string>
+# include "Weapon.hpp"
+
+class HumanA
+{
+    public:
+        HumanA(std::string name, Weapon& weapon);
+        ~HumanA();
+        void attack();
+    private:
+        std::string name;
+        Weapon&     my_weapon;
+};
+
+#endif

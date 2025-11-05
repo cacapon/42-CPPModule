@@ -1,12 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:13:42 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:13:43 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file Weapon.hpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief What an incredible weapon this is!
+ * 
+ * 
+ */
 
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+
+#include <string>
+
+class Weapon
+{
+    public:
+        Weapon(std::string type);
+        ~Weapon();
+        std::string getType(void);
+        void        setType(std::string type);
+    private:
+        std::string type;
+};
+
+#endif

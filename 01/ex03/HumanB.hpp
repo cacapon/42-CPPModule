@@ -1,12 +1,27 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:13:36 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:13:39 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file HumanB.hpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief He starts out unarmed.
+ * 
+ * 
+ */
 
+ #ifndef HUMANB_HPP
+# define HUMANB_HPP
+
+# include <string>
+# include "Weapon.hpp"
+
+class HumanB
+{
+    public:
+        HumanB(std::string name);
+        ~HumanB();
+        void    attack();
+        void    setWeapon(Weapon& weapon);
+    private:
+        std::string name;
+        Weapon*     my_weapon;
+};
+
+#endif
