@@ -1,12 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:09:12 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:09:13 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file main.cpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief HI THIS IS BRAIN
+ * 
+ * 
+ */
 
+#include <iostream>
+
+int main(void)
+{
+    std::string str = "HI THIS BRAIN";
+    std::string* stringPTR = &str;
+    std::string& stringREF = str;
+
+    std::cout << &str << "\n";
+    std::cout << stringPTR << "\n";
+    std::cout << &stringREF << "\n";
+
+    std::cout << str << "\n";
+    std::cout << *stringPTR << "\n";
+    std::cout << stringREF << "\n";
+}
