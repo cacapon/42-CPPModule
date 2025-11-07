@@ -5,4 +5,5 @@
 */SedIsForLosers
 */TestSedIsForLosers
 
-*/test_*
+ex04/test_in.txt
+ex04/*.replace
