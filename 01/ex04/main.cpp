@@ -42,6 +42,7 @@ void    process(
         output << replace_all(line, s1, s2) << std::endl;
 }
 
+#ifndef TEST_MODE
 int main(int ac, char **av)
 {
     std::ifstream   input;
@@ -58,3 +59,32 @@ int main(int ac, char **av)
     output.close();
     return (0);
 }
+#endif
+
+#ifdef TEST_MODE
+#include <stdlib.h>
+int main(void)
+{
+    std::ofstream test_in("test_in.txt");
+    test_in << "apple orange banana apple";
+    test_in.close();
+
+    system("./SedIsForLosers test_in.txt apple grape");
+
+    std::ifstream result("test_in.txt.replace");
+    std::string content;
+    std::string expected = "grape orange banana grape";
+    std::getline(result, content);
+    result.close();
+
+    if (content == expected)
+        std::cout << "OK: Test passed!" << std::endl;
+    else
+    {
+        std::cout << "NG: Test failed."       << std::endl;
+        std::cout << "Expected: " << expected << std::endl;
+        std::cout << "Got:      " << content  << std::endl;
+    }
+    return (0);
+}
+#endif
