@@ -1,12 +1,12 @@
 /**
- * @file open_iofile.cpp
+ * @file OpenIOFile.cpp
  * @author ttsubo (ttsubo@student.42.fr)
  * @brief 
  * 
  * 
  */
 
-#include "open_iofile.hpp"
+#include "OpenIOFile.hpp"
 
 static  void    print_cannot_open(const char *fname)
 {

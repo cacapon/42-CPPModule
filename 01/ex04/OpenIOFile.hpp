@@ -1,13 +1,13 @@
 /**
- * @file open_input.hpp
+ * @file OpenIOFile.hpp
  * @author ttsubo (ttsubo@student.42.fr)
  * @brief 
  * 
  * 
  */
 
-#ifndef OPEN_INPUT_HPP
-# define OPEN_INPUT_HPP
+#ifndef OPENIOFILE_HPP
+# define OPENIOFILE_HPP
 # include <fstream>
 # include <iostream>
 

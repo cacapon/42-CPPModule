@@ -1,12 +1,12 @@
 /**
- * @file replace_all.cpp
+ * @file ReplaceAll.cpp
  * @author ttsubo (ttsubo@student.42.fr)
  * @brief Replace a string contained within a single line of text
  * 
  * 
  */
 
-#include "replace_all.hpp"
+#include "ReplaceAll.hpp"
 
 std::string replace_all(
     const std::string &src,

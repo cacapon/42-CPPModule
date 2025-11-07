@@ -9,8 +9,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "open_iofile.hpp"
-#include "replace_all.hpp"
+#include "OpenIOFile.hpp"
+#include "ReplaceAll.hpp"
 
 /**
  * @brief Outputs usage.

@@ -6,7 +6,7 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 12:08:19 by ttsubo            #+#    #+#              #
-#    Updated: 2025/11/06 09:04:52 by ttsubo           ###   ########.fr        #
+#    Updated: 2025/11/07 00:56:40 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ TEST	= Test$(NAME)
 CPP 	= c++
 CPP_FLG = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp replace_all.cpp open_iofile.cpp
+SRCS = main.cpp ReplaceAll.cpp OpenIOFile.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all:$(NAME)
