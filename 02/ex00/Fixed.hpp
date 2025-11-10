@@ -1,12 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:19:55 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:19:57 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file Fixed.hpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief 
+ * 
+ * 
+ */
 
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
+
+class Fixed
+{
+    public:
+        Fixed(void);
+        Fixed(const Fixed& other);
+        Fixed& operator=(const Fixed& other);
+        ~Fixed();
+
+        int     getRawBits(void) const;
+        void    setRawBits(int const raw);
+    private:
+        int fixed_point_num;
+        static const int fractional_bits = 8;
+};
+
+#endif
