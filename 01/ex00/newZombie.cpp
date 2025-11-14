@@ -1,12 +1,9 @@
 /**
  * @file newZombie.cpp
  * @author ttsubo (ttsubo@student.42.fr)
- * @brief 
+ * @brief
  */
 
 #include "Zombie.hpp"
 
-Zombie *newZombie(std::string name)
-{
-    return new Zombie(name);
-}
+Zombie *newZombie(std::string name) { return new Zombie(name); }

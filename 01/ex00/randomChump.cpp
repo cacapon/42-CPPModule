@@ -1,15 +1,14 @@
 /**
  * @file randomChump.cpp
  * @author ttsubo (ttsubo@student.42.fr)
- * @brief 
- * 
- * 
+ * @brief
+ *
+ *
  */
 
 #include "Zombie.hpp"
 
-void randomChump(std::string name)
-{
-    Zombie zombie = Zombie(name);
-    zombie.announce();
+void randomChump(std::string name) {
+  Zombie zombie = Zombie(name);
+  zombie.announce();
 }
