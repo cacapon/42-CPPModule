@@ -224,5 +224,6 @@ $RECYCLE.BIN/
 #custom
 .vscode/*
 compile_commands.json
+.cache
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,linux,windows,macos
