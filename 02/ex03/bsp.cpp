@@ -10,11 +10,11 @@
 #include "Point.hpp"
 #include <iostream>
 
-static Fixed cross(Point const &a, Point const &b, Point const &p) {
+static Fixed cross(Point const &a, Point const &b, Point const &point) {
     Fixed abx = b.getX() - a.getX();
     Fixed aby = b.getY() - a.getY();
-    Fixed apx = p.getX() - a.getX();
-    Fixed apy = p.getY() - a.getY();
+    Fixed apx = point.getX() - a.getX();
+    Fixed apy = point.getY() - a.getY();
     return (abx * apy - aby * apx);
 }
 
@@ -28,5 +28,5 @@ bool bsp(const Point &a, const Point &b, const Point &c, const Point &point) {
     bool allPositive = (c1 > Fixed(0) && c2 > Fixed(0) && c3 > Fixed(0));
     bool allNegative = (c1 < Fixed(0) && c2 < Fixed(0) && c3 < Fixed(0));
 
-    return (allPositive || allNegative);
+    return allPositive || allNegative;
 }
