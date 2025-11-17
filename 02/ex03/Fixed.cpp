@@ -11,28 +11,46 @@
 #include <iostream>
 
 Fixed::Fixed() {
+#ifdef DEBUG_LOG
     std::cout << "Default constructor called" << std::endl;
+#endif
     this->val = 0;
 }
 
 Fixed::Fixed(const Fixed &other) {
+#ifdef DEBUG_LOG
     std::cout << "Copy constructor called" << std::endl;
+#endif
     *this = other;
 }
 
-Fixed::Fixed(const int i) : val(i << bits){};
+Fixed::Fixed(const int i) : val(i << bits) {
+#ifdef DEBUG_LOG
+    std::cout << "Int constructor called" << std::endl;
+#endif
+};
 
-Fixed::Fixed(const float f) : val(static_cast<int>(roundf(f * (1 << bits)))){};
+Fixed::Fixed(const float f) : val(static_cast<int>(roundf(f * (1 << bits)))) {
+#ifdef DEBUG_LOG
+    std::cout << "Float constructor called" << std::endl;
+#endif
+};
 
 Fixed &Fixed::operator=(const Fixed &other) {
+#ifdef DEBUG_LOG
     std::cout << "Copy assignment operator called" << std::endl;
+#endif
     if (this != &other) {
         this->setRawBits(other.getRawBits());
     }
     return (*this);
 }
 
-Fixed::~Fixed(void) { std::cout << "Destructor called" << std::endl; }
+Fixed::~Fixed(void) {
+#ifdef DEBUG_LOG
+    std::cout << "Destructor called" << std::endl;
+#endif
+}
 
 bool Fixed::operator>(const Fixed &other) { return (this->val > other.val); }
 
@@ -116,12 +134,16 @@ const Fixed &Fixed::min(const Fixed &a, const Fixed &b) {
 }
 
 int Fixed::getRawBits(void) const {
+#ifdef DEBUG_LOG
     std::cout << "getRawBits member function called" << std::endl;
+#endif
     return this->val;
 }
 
 void Fixed::setRawBits(int const raw) {
+#ifdef DEBUG_LOG
     std::cout << "setRawBits member function called" << std::endl;
+#endif
     this->val = raw;
 }
 
