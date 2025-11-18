@@ -54,7 +54,8 @@ void ClapTrap::attack(const std::string &target) {
     }
     this->ep--;
     showName();
-    std::cout << ": attack OK: " << target << " <=(" << this->atk << ")" << std::endl;
+    std::cout << ": attack OK: " << target << " <=(" << this->atk << ")"
+              << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -64,24 +65,26 @@ void ClapTrap::takeDamage(unsigned int amount) {
         return;
     }
     showName();
-    std::cout << ": takeDamage OK: " << amount << " points of damage!" << std::endl;
+    std::cout << ": takeDamage OK: " << amount << " points of damage!"
+              << std::endl;
     this->hp = this->hp <= amount ? 0 : this->hp - amount;
 }
 
-void ClapTrap::beRepaired(unsigned int amount){
+void ClapTrap::beRepaired(unsigned int amount) {
     if (this->ep == 0) {
         showName();
         std::cout << ": beRepaired NG: ep=0" << std::endl;
-        return ;
+        return;
     }
     if (this->hp == 0) {
         showName();
-        std::cout << ": beRepaired NG: hp=0" << std:: endl;
-        return ;
+        std::cout << ": beRepaired NG: hp=0" << std::endl;
+        return;
     }
     this->ep--;
     showName();
-    std::cout << ": beRepaired OK: recovered " << amount << " points." << std::endl;
+    std::cout << ": beRepaired OK: recovered " << amount << " points."
+              << std::endl;
     this->hp += amount;
 }
 
