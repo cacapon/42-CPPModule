@@ -88,7 +88,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
     this->hp += amount;
 }
 
-std::string ClapTrap::getName() const { return this->name; }
+const std::string &ClapTrap::getName() const { return this->name; }
 unsigned int ClapTrap::getHp() const { return this->hp; }
 unsigned int ClapTrap::getEp() const { return this->ep; }
 unsigned int ClapTrap::getAtk() const { return this->atk; }
