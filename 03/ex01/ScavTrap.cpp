@@ -37,9 +37,9 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
     if (this != &other) {
         ClapTrap::operator=(other);
-        this->hp = 100;
-        this->ep = 50;
-        this->atk = 20;
+        this->hp = other.hp;
+        this->ep = other.ep;
+        this->atk = other.atk;
     }
     return *this;
 }
@@ -50,6 +50,10 @@ ScavTrap::~ScavTrap() {
 }
 
 void ScavTrap::guardGate() {
+    if (this->hp == 0) {
+        std::cout << "guardGate NG: hp=0";
+        return ;
+    }
     showName();
     std::cout << "Gate Keeper mode ON." << std::endl;
 }
