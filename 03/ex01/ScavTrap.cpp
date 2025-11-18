@@ -27,9 +27,9 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
-    this->hp = 100;
-    this->ep = 50;
-    this->atk = 20;
+    this->hp = other.hp;
+    this->ep = other.ep;
+    this->atk = other.atk;
     showName();
     std::cout << "copy ctor" << std::endl;
 }
