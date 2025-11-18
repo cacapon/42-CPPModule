@@ -42,6 +42,7 @@ int main(void) {
         ep1->attack("Attack success");
         ep1->beRepaired(1);
         ep1->takeDamage(1);
+        ep1->guardGate();
         delete ep1;
         std::cout << "================" << std::endl;
     }
@@ -55,6 +56,7 @@ int main(void) {
         ep2->attack("Attack failed");
         ep2->beRepaired(1);
         ep2->takeDamage(1);
+        ep2->guardGate();
         delete ep2;
         std::cout << "================" << std::endl;
     }
@@ -65,6 +67,7 @@ int main(void) {
         hp1->attack("Attack Success");
         hp1->beRepaired(1);
         hp1->takeDamage(1);
+        hp1->guardGate();
         delete hp1;
         std::cout << "================" << std::endl;
     }
@@ -75,6 +78,7 @@ int main(void) {
         hp2->attack("Attack Failed");
         hp2->beRepaired(1);
         hp2->takeDamage(1);
+        hp2->guardGate();
         delete hp2;
         std::cout << "================" << std::endl;
     }

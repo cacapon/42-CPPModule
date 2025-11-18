@@ -51,7 +51,8 @@ ScavTrap::~ScavTrap() {
 
 void ScavTrap::guardGate() {
     if (this->hp == 0) {
-        std::cout << "guardGate NG: hp=0";
+        showName();
+        std::cout << "guardGate NG: hp=0" << std::endl;
         return ;
     }
     showName();
