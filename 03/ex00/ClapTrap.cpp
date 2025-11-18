@@ -17,7 +17,6 @@ ClapTrap::ClapTrap() : name("???"), hp(10), ep(10), atk(0) {
 }
 ClapTrap::ClapTrap(const std::string &name)
     : name(name), hp(10), ep(10), atk(0) {
-    (void)name;
     showName();
     std::cout << ": name ctor" << std::endl;
 }
