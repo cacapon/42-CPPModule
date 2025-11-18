@@ -21,7 +21,7 @@ class ClapTrap {
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
-    std::string getName() const;
+    const std::string &getName() const;
     unsigned int getHp() const;
     unsigned int getEp() const;
     unsigned int getAtk() const;
