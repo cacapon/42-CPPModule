@@ -17,8 +17,9 @@ ClapTrap::ClapTrap() : name("???"), hp(10), ep(10), atk(0) {
 }
 ClapTrap::ClapTrap(const std::string &name)
     : name(name), hp(10), ep(10), atk(0) {
+    (void)name;
     showName();
-    std::cout << ": " << name << " ctor" << std::endl;
+    std::cout << ": name ctor" << std::endl;
 }
 ClapTrap::ClapTrap(const ClapTrap &other)
     : name(other.name), hp(other.hp), ep(other.ep), atk(other.atk) {
@@ -88,4 +89,11 @@ void ClapTrap::beRepaired(unsigned int amount) {
     this->hp += amount;
 }
 
-void ClapTrap::showName() { std::cout << "ClapTrap [" << this->name << "]"; }
+std::string ClapTrap::getName() const { return this->name; }
+unsigned int ClapTrap::getHp() const { return this->hp; }
+unsigned int ClapTrap::getEp() const { return this->ep; }
+unsigned int ClapTrap::getAtk() const { return this->atk; }
+
+void ClapTrap::showName() const {
+    std::cout << "ClapTrap [" << this->name << "]";
+}

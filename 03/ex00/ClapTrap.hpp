@@ -31,7 +31,7 @@ class ClapTrap {
     unsigned int hp;
     unsigned int ep;
     unsigned int atk;
-    void showName();
+    void showName() const;
 };
 
 #endif
