@@ -1,23 +1,23 @@
 /**
- * @file FlagTrap.hpp
+ * @file FragTrap.hpp
  * @author ttsubo (ttsubo@student.42.fr)
  * @brief
  *
  *
  */
 
-#ifndef FLAGTRAP_HPP
-#define FLAGTRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 #include "ClapTrap.hpp"
 #include <string>
 
-class FlagTrap : public ClapTrap {
+class FragTrap : public ClapTrap {
   public:
-    FlagTrap();
-    FlagTrap(const std::string &name);
-    FlagTrap(const FlagTrap &other);
-    FlagTrap &operator=(const FlagTrap &other);
-    ~FlagTrap();
+    FragTrap();
+    FragTrap(const std::string &name);
+    FragTrap(const FragTrap &other);
+    FragTrap &operator=(const FragTrap &other);
+    ~FragTrap();
     void highFivesGuys(void);
 
   protected:

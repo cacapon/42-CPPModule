@@ -6,23 +6,23 @@
  *
  */
 
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 #include <iostream>
 #include <ostream>
 
 int main(void) {
     {
         std::cout << "<ctor/dtor test>" << std::endl;
-        FlagTrap default_ctor = FlagTrap();
-        FlagTrap name_ctor = FlagTrap("NameCtor");
-        FlagTrap copy_ctor = FlagTrap(default_ctor);
+        FragTrap default_ctor = FragTrap();
+        FragTrap name_ctor = FragTrap("NameCtor");
+        FragTrap copy_ctor = FragTrap(default_ctor);
     }
     std::cout << "================" << std::endl;
     {
         // normal test
         std::cout << "<normal test>" << std::endl;
-        FlagTrap normal = FlagTrap("Normal");
-        normal.attack("Flag1");
+        FragTrap normal = FragTrap("Normal");
+        normal.attack("Frag1");
         normal.takeDamage(1);
         normal.beRepaired(1);
         normal.highFivesGuys();
@@ -30,7 +30,7 @@ int main(void) {
     std::cout << "================" << std::endl;
     {
         std::cout << "<ep test1: Crap ep>" << std::endl;
-        FlagTrap ep1 = FlagTrap("EPTest1");
+        FragTrap ep1 = FragTrap("EPTest1");
         for (int i = 0; i < 5; i++) {
             ep1.attack("Enemy");
             ep1.beRepaired(1);
@@ -43,7 +43,7 @@ int main(void) {
     std::cout << "================" << std::endl;
     {
         std::cout << "<ep test2: Scav ep>" << std::endl;
-        FlagTrap ep2 = FlagTrap("EPTest2");
+        FragTrap ep2 = FragTrap("EPTest2");
         for (int i = 0; i < 25; i++) {
             ep2.attack("Enemy");
             ep2.beRepaired(1);
@@ -55,8 +55,8 @@ int main(void) {
     }
     std::cout << "================" << std::endl;
     {
-        std::cout << "<ep test3: Flag ep>" << std::endl;
-        FlagTrap ep3 = FlagTrap("EPTest3");
+        std::cout << "<ep test3: Frag ep>" << std::endl;
+        FragTrap ep3 = FragTrap("EPTest3");
         for (int i = 0; i < 50; i++) {
             ep3.attack("Enemy");
             ep3.beRepaired(1);
@@ -69,7 +69,7 @@ int main(void) {
     std::cout << "================" << std::endl;
     {
         std::cout << "<hp test1: Clap hp>" << std::endl;
-        FlagTrap hp1 = FlagTrap("HPTest1");
+        FragTrap hp1 = FragTrap("HPTest1");
         hp1.takeDamage(10);
         hp1.attack("Attack Success");
         hp1.beRepaired(1);
@@ -78,8 +78,8 @@ int main(void) {
     }
     std::cout << "================" << std::endl;
     {
-        std::cout << "<hp test2: Flag hp (= Scav hp)>" << std::endl;
-        FlagTrap hp2 = FlagTrap("HPTest2");
+        std::cout << "<hp test2: Frag hp (= Scav hp)>" << std::endl;
+        FragTrap hp2 = FragTrap("HPTest2");
         hp2.takeDamage(100);
         hp2.attack("Attack Failed");
         hp2.beRepaired(1);

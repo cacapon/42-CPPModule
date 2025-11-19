@@ -1,17 +1,17 @@
 /**
- * @file FlagTrap.cpp
+ * @file FragTrap.cpp
  * @author ttsubo (ttsubo@student.42.fr)
  * @brief
  *
  *
  */
 
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
 
-FlagTrap::FlagTrap() : ClapTrap() {
+FragTrap::FragTrap() : ClapTrap() {
     this->hp = HP;
     this->ep = EP;
     this->atk = ATK;
@@ -19,7 +19,7 @@ FlagTrap::FlagTrap() : ClapTrap() {
     std::cout << "default ctor" << std::endl;
 }
 
-FlagTrap::FlagTrap(const std::string &name) : ClapTrap(name) {
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
     this->hp = HP;
     this->ep = EP;
     this->atk = ATK;
@@ -27,7 +27,7 @@ FlagTrap::FlagTrap(const std::string &name) : ClapTrap(name) {
     std::cout << "name ctor" << std::endl;
 }
 
-FlagTrap::FlagTrap(const FlagTrap &other) : ClapTrap(other) {
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
     this->hp = other.hp;
     this->ep = other.ep;
     this->atk = other.atk;
@@ -35,7 +35,7 @@ FlagTrap::FlagTrap(const FlagTrap &other) : ClapTrap(other) {
     std::cout << "copy ctor" << std::endl;
 }
 
-FlagTrap &FlagTrap::operator=(const FlagTrap &other) {
+FragTrap &FragTrap::operator=(const FragTrap &other) {
     if (this != &other) {
         ClapTrap::operator=(other);
         this->hp = other.hp;
@@ -45,12 +45,12 @@ FlagTrap &FlagTrap::operator=(const FlagTrap &other) {
     return *this;
 }
 
-FlagTrap::~FlagTrap(){
+FragTrap::~FragTrap(){
     showName(); 
     std::cout << "dtor" << std::endl;
 }
 
-void FlagTrap::highFivesGuys() {
+void FragTrap::highFivesGuys() {
     if (this->hp == 0) {
         showName();
         std::cout << "highFivesGuys NG: hp=0" << std::endl;
@@ -60,6 +60,6 @@ void FlagTrap::highFivesGuys() {
     std::cout << "highFivesGuys OK: Request a high-five" << std::endl;
 }
 
-void FlagTrap::showName() const {
-    std::cout << "FlagTrap [" << this->getName() << "]: ";
+void FragTrap::showName() const {
+    std::cout << "FragTrap [" << this->getName() << "]: ";
 }
