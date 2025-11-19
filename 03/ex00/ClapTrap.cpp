@@ -11,12 +11,15 @@
 #include <ostream>
 #include <string>
 
-ClapTrap::ClapTrap() : name("???"), hp(10), ep(10), atk(0) {
+const std::string ClapTrap::DEFAULT_NAME = "???";
+
+ClapTrap::ClapTrap()
+    : name(DEFAULT_NAME), hp(BASE_HP), ep(BASE_EP), atk(BASE_ATK) {
     showName();
     std::cout << ": default ctor" << std::endl;
 }
 ClapTrap::ClapTrap(const std::string &name)
-    : name(name), hp(10), ep(10), atk(0) {
+    : name(name), hp(BASE_HP), ep(BASE_EP), atk(BASE_ATK) {
     showName();
     std::cout << ": name ctor" << std::endl;
 }
