@@ -7,11 +7,7 @@
  */
 
 #include "DiamondTrap.hpp"
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 #include <iostream>
-#include <string>
 
 DiamondTrap::DiamondTrap()
     : ScavTrap(ClapTrap::DEFAULT_NAME + "_clap_name"),

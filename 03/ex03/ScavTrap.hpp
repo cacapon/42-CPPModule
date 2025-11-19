@@ -1,9 +1,9 @@
 /**
  * @file ScavTrap.hpp
  * @author ttsubo (ttsubo@student.42.fr)
- * @brief 
- * 
- * 
+ * @brief
+ *
+ *
  */
 
 #ifndef SCAVTRAP_HPP

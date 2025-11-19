@@ -8,6 +8,7 @@
 
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
 #include <string>
 
@@ -18,7 +19,7 @@ class FragTrap : public ClapTrap {
     FragTrap(const FragTrap &other);
     FragTrap &operator=(const FragTrap &other);
     ~FragTrap();
-    void highFivesGuys(void);
+    void highFivesGuys();
 
   protected:
     static const unsigned int HP = 100;

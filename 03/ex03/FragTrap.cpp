@@ -7,9 +7,7 @@
  */
 
 #include "FragTrap.hpp"
-#include "ClapTrap.hpp"
 #include <iostream>
-#include <string>
 
 FragTrap::FragTrap() : ClapTrap() {
     this->hp = HP;
@@ -45,8 +43,8 @@ FragTrap &FragTrap::operator=(const FragTrap &other) {
     return *this;
 }
 
-FragTrap::~FragTrap(){
-    showName(); 
+FragTrap::~FragTrap() {
+    showName();
     std::cout << "dtor" << std::endl;
 }
 

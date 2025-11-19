@@ -9,7 +9,6 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 #include <ostream>
-#include <string>
 
 const std::string ClapTrap::DEFAULT_NAME = "???";
 

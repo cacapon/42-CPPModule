@@ -8,7 +8,6 @@
 
 #include "FragTrap.hpp"
 #include <iostream>
-#include <ostream>
 
 int main(void) {
     {
