@@ -1,12 +1,31 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:33:29 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:33:30 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file DiamondTrap.hpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief
+ *
+ *
+ */
 
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
+
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+#include <string>
+
+class DiamondTrap : public ScavTrap, public FragTrap {
+  public:
+    DiamondTrap();
+    DiamondTrap(const std::string &name);
+    DiamondTrap(const DiamondTrap &other);
+    DiamondTrap &operator=(const DiamondTrap &other);
+    ~DiamondTrap();
+    void attack(const std::string &target);
+    void whoAmI();
+
+  private:
+    std::string name;
+    virtual void showName() const;
+};
+
+#endif

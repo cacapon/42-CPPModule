@@ -26,6 +26,12 @@ class ClapTrap {
     unsigned int getEp() const;
     unsigned int getAtk() const;
 
+  protected:
+    static const std::string DEFAULT_NAME;
+    static const unsigned int BASE_HP = 10;
+    static const unsigned int BASE_EP = 10;
+    static const unsigned int BASE_ATK = 0;
+
   private:
     std::string name;
     unsigned int hp;

@@ -10,18 +10,18 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap() : ClapTrap("ScavTrap") {
-    this->hp = 100;
-    this->ep = 50;
-    this->atk = 20;
+ScavTrap::ScavTrap() : ClapTrap() {
+    this->hp = HP;
+    this->ep = EP;
+    this->atk = ATK;
     showName();
     std::cout << "default ctor" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
-    this->hp = 100;
-    this->ep = 50;
-    this->atk = 20;
+    this->hp = HP;
+    this->ep = EP;
+    this->atk = ATK;
     showName();
     std::cout << "name ctor" << std::endl;
 }
@@ -53,7 +53,7 @@ void ScavTrap::guardGate() {
     if (this->hp == 0) {
         showName();
         std::cout << "guardGate NG: hp=0" << std::endl;
-        return ;
+        return;
     }
     showName();
     std::cout << "Gate Keeper mode ON." << std::endl;
