@@ -1,0 +1,290 @@
+<ctor/dtor test>
+ClapTrap [???_clap_name]: name ctor
+ScavTrap [???_clap_name]: name ctor
+ClapTrap [???_clap_name]: name ctor
+FragTrap [???_clap_name]: name ctor
+DiamondTrap []: default ctor
+ClapTrap [NameCtor_clap_name]: name ctor
+ScavTrap [NameCtor_clap_name]: name ctor
+ClapTrap [NameCtor_clap_name]: name ctor
+FragTrap [NameCtor_clap_name]: name ctor
+DiamondTrap [NameCtor]: name ctor
+ClapTrap [???_clap_name]: copy ctor
+ScavTrap [???_clap_name]: copy ctor
+ClapTrap [???_clap_name]: copy ctor
+FragTrap [???_clap_name]: copy ctor
+DiamondTrap []: copy ctor
+DiamondTrap []: dtor
+FragTrap [???_clap_name]: dtor
+ClapTrap [???_clap_name]: dtor
+ScavTrap [???_clap_name]: dtor
+ClapTrap [???_clap_name]: dtor
+DiamondTrap [NameCtor]: dtor
+FragTrap [NameCtor_clap_name]: dtor
+ClapTrap [NameCtor_clap_name]: dtor
+ScavTrap [NameCtor_clap_name]: dtor
+ClapTrap [NameCtor_clap_name]: dtor
+DiamondTrap []: dtor
+FragTrap [???_clap_name]: dtor
+ClapTrap [???_clap_name]: dtor
+ScavTrap [???_clap_name]: dtor
+ClapTrap [???_clap_name]: dtor
+================
+<normal test>
+ClapTrap [Normal_clap_name]: name ctor
+ScavTrap [Normal_clap_name]: name ctor
+ClapTrap [Normal_clap_name]: name ctor
+FragTrap [Normal_clap_name]: name ctor
+DiamondTrap [Normal]: name ctor
+DiamondTrap [Normal]: attack OK: Diamond1 <=(20)
+DiamondTrap [Normal]: takeDamage OK: 1 points of damage!
+DiamondTrap [Normal]: beRepaired OK: recovered 1 points.
+whoAmI:ClapTrapName:[Normal_clap_name]	DiamondTrapName:[Normal]
+DiamondTrap [Normal]: dtor
+FragTrap [Normal_clap_name]: dtor
+ClapTrap [Normal_clap_name]: dtor
+ScavTrap [Normal_clap_name]: dtor
+ClapTrap [Normal_clap_name]: dtor
+================
+<ep test1: Crap ep>
+ClapTrap [EPTest1_clap_name]: name ctor
+ScavTrap [EPTest1_clap_name]: name ctor
+ClapTrap [EPTest1_clap_name]: name ctor
+FragTrap [EPTest1_clap_name]: name ctor
+DiamondTrap [EPTest1]: name ctor
+DiamondTrap [EPTest1]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest1]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest1]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest1]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest1]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest1]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest1]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest1]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest1]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest1]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest1]: attack OK: Attack success <=(20)
+DiamondTrap [EPTest1]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest1]: takeDamage OK: 1 points of damage!
+whoAmI:ClapTrapName:[EPTest1_clap_name]	DiamondTrapName:[EPTest1]
+DiamondTrap [EPTest1]: dtor
+FragTrap [EPTest1_clap_name]: dtor
+ClapTrap [EPTest1_clap_name]: dtor
+ScavTrap [EPTest1_clap_name]: dtor
+ClapTrap [EPTest1_clap_name]: dtor
+================
+<ep test2: Scav ep>
+ClapTrap [EPTest2_clap_name]: name ctor
+ScavTrap [EPTest2_clap_name]: name ctor
+ClapTrap [EPTest2_clap_name]: name ctor
+FragTrap [EPTest2_clap_name]: name ctor
+DiamondTrap [EPTest2]: name ctor
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest2]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest2]: attack NG: ep=0
+DiamondTrap [EPTest2]: beRepaired NG: ep=0
+DiamondTrap [EPTest2]: takeDamage OK: 1 points of damage!
+whoAmI:ClapTrapName:[EPTest2_clap_name]	DiamondTrapName:[EPTest2]
+DiamondTrap [EPTest2]: dtor
+FragTrap [EPTest2_clap_name]: dtor
+ClapTrap [EPTest2_clap_name]: dtor
+ScavTrap [EPTest2_clap_name]: dtor
+ClapTrap [EPTest2_clap_name]: dtor
+================
+<ep test3: Flag ep>
+ClapTrap [EPTest3_clap_name]: name ctor
+ScavTrap [EPTest3_clap_name]: name ctor
+ClapTrap [EPTest3_clap_name]: name ctor
+FragTrap [EPTest3_clap_name]: name ctor
+DiamondTrap [EPTest3]: name ctor
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack OK: Enemy <=(20)
+DiamondTrap [EPTest3]: beRepaired OK: recovered 1 points.
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: attack NG: ep=0
+DiamondTrap [EPTest3]: beRepaired NG: ep=0
+DiamondTrap [EPTest3]: takeDamage OK: 1 points of damage!
+whoAmI:ClapTrapName:[EPTest3_clap_name]	DiamondTrapName:[EPTest3]
+DiamondTrap [EPTest3]: dtor
+FragTrap [EPTest3_clap_name]: dtor
+ClapTrap [EPTest3_clap_name]: dtor
+ScavTrap [EPTest3_clap_name]: dtor
+ClapTrap [EPTest3_clap_name]: dtor
+================
+<hp test1: Clap hp>
+ClapTrap [HPTest1_clap_name]: name ctor
+ScavTrap [HPTest1_clap_name]: name ctor
+ClapTrap [HPTest1_clap_name]: name ctor
+FragTrap [HPTest1_clap_name]: name ctor
+DiamondTrap [HPTest1]: name ctor
+DiamondTrap [HPTest1]: takeDamage OK: 10 points of damage!
+DiamondTrap [HPTest1]: attack OK: Attack Success <=(20)
+DiamondTrap [HPTest1]: beRepaired OK: recovered 1 points.
+DiamondTrap [HPTest1]: takeDamage OK: 1 points of damage!
+whoAmI:ClapTrapName:[HPTest1_clap_name]	DiamondTrapName:[HPTest1]
+DiamondTrap [HPTest1]: dtor
+FragTrap [HPTest1_clap_name]: dtor
+ClapTrap [HPTest1_clap_name]: dtor
+ScavTrap [HPTest1_clap_name]: dtor
+ClapTrap [HPTest1_clap_name]: dtor
+================
+<hp test2: Flag hp (= Scav hp)>
+ClapTrap [HPTest2_clap_name]: name ctor
+ScavTrap [HPTest2_clap_name]: name ctor
+ClapTrap [HPTest2_clap_name]: name ctor
+FragTrap [HPTest2_clap_name]: name ctor
+DiamondTrap [HPTest2]: name ctor
+DiamondTrap [HPTest2]: takeDamage OK: 100 points of damage!
+DiamondTrap [HPTest2]: attack NG: hp=0
+DiamondTrap [HPTest2]: beRepaired NG: hp=0
+DiamondTrap [HPTest2]: takeDamage NG: hp=0
+whoAmI:ClapTrapName:[HPTest2_clap_name]	DiamondTrapName:[HPTest2]
+DiamondTrap [HPTest2]: dtor
+FragTrap [HPTest2_clap_name]: dtor
+ClapTrap [HPTest2_clap_name]: dtor
+ScavTrap [HPTest2_clap_name]: dtor
+ClapTrap [HPTest2_clap_name]: dtor
+================

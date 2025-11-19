@@ -33,7 +33,7 @@ DiamondTrap::DiamondTrap(const std::string &name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
-    : ScavTrap(other.ScavTrap::name + "X"), FragTrap(other.FragTrap::name + "X") {
+    : ScavTrap(other), FragTrap(other) {
     this->FragTrap::hp = other.FragTrap::hp;
     this->ScavTrap::ep = other.ScavTrap::ep;
     this->FragTrap::atk = other.FragTrap::atk;
