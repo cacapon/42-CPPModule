@@ -1,16 +1,17 @@
 /**
- * @file ScavTrap.cpp
+ * @file FlagTrap.cpp
  * @author ttsubo (ttsubo@student.42.fr)
  * @brief
  *
  *
  */
 
-#include "ScavTrap.hpp"
+#include "FlagTrap.hpp"
 #include "ClapTrap.hpp"
 #include <iostream>
+#include <string>
 
-ScavTrap::ScavTrap() : ClapTrap() {
+FlagTrap::FlagTrap() : ClapTrap() {
     this->hp = HP;
     this->ep = EP;
     this->atk = ATK;
@@ -18,7 +19,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
     std::cout << "default ctor" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
+FlagTrap::FlagTrap(const std::string &name) : ClapTrap(name) {
     this->hp = HP;
     this->ep = EP;
     this->atk = ATK;
@@ -26,7 +27,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
     std::cout << "name ctor" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
+FlagTrap::FlagTrap(const FlagTrap &other) : ClapTrap(other) {
     this->hp = other.hp;
     this->ep = other.ep;
     this->atk = other.atk;
@@ -34,7 +35,7 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
     std::cout << "copy ctor" << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
+FlagTrap &FlagTrap::operator=(const FlagTrap &other) {
     if (this != &other) {
         ClapTrap::operator=(other);
         this->hp = other.hp;
@@ -44,21 +45,21 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
     return *this;
 }
 
-ScavTrap::~ScavTrap() {
-    showName();
+FlagTrap::~FlagTrap(){
+    showName(); 
     std::cout << "dtor" << std::endl;
 }
 
-void ScavTrap::guardGate() {
+void FlagTrap::highFivesGuys() {
     if (this->hp == 0) {
         showName();
-        std::cout << "guardGate NG: hp=0" << std::endl;
+        std::cout << "highFivesGuys NG: hp=0" << std::endl;
         return;
     }
     showName();
-    std::cout << "Gate Keeper mode ON." << std::endl;
+    std::cout << "highFivesGuys OK: Request a high-five" << std::endl;
 }
 
-void ScavTrap::showName() const {
-    std::cout << "ScavTrap [" << this->getName() << "]: ";
+void FlagTrap::showName() const {
+    std::cout << "FlagTrap [" << this->getName() << "]: ";
 }
