@@ -1,12 +1,39 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:33:03 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:33:04 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file ClapTrap.hpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief To me, it looks like nothing but a crocodile.
+ *
+ *
+ */
 
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
+
+#include <string>
+class ClapTrap {
+  public:
+    ClapTrap();
+    ClapTrap(const std::string &name);
+    ClapTrap(const ClapTrap &other);
+    ClapTrap &operator=(const ClapTrap &other);
+    virtual ~ClapTrap();
+    void attack(const std::string &target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
+
+    const std::string &getName() const;
+    unsigned int getHp() const;
+    unsigned int getEp() const;
+    unsigned int getAtk() const;
+
+  protected:
+    std::string name;
+    unsigned int hp;
+    unsigned int ep;
+    unsigned int atk;
+
+  private:
+    virtual void showName() const;
+};
+
+#endif
