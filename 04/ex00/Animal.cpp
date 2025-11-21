@@ -10,7 +10,9 @@
 #include <iostream>
 #include <string>
 
-Animal::Animal() { std::cout << "Animal::default ctor" << std::endl; }
+Animal::Animal() : type("Animal") {
+    std::cout << "Animal::default ctor" << std::endl;
+}
 
 Animal::Animal(const Animal &other) {
     this->type = other.type;
