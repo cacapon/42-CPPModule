@@ -20,6 +20,13 @@ Cat::Cat(const Cat &other) : Animal(other) {
     std::cout << "Cat::copy ctor" << std::endl;
 }
 
+Cat &Cat::operator=(const Cat &other) {
+    if (this != &other) {
+        this->type = other.type;
+    }
+    return *this;
+}
+
 Cat::~Cat() { std::cout << "Cat::dtor" << std::endl; }
 
 void Cat::makeSound() const { std::cout << "Meow" << std::endl; }

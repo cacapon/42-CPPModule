@@ -21,6 +21,13 @@ Dog::Dog(const Dog &other) : Animal(other) {
     std::cout << "Dog::copy ctor" << std::endl;
 }
 
+Dog &Dog::operator=(const Dog &other) {
+    if (this != &other) {
+        this->type = other.type;
+    }
+    return *this;
+}
+
 Dog::~Dog() { std::cout << "Dog::dtor" << std::endl; }
 
 void Dog::makeSound() const { std::cout << "Woof woof!" << std::endl; }
