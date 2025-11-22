@@ -6,11 +6,12 @@
  *
  */
 
-#include "Point.hpp"
 #include <iostream>
 
-static void test(const char *name, const Point &a, const Point &b,
-                 const Point &c, const Point &p) {
+#include "Point.hpp"
+
+static void test(const char* name, const Point& a, const Point& b,
+                 const Point& c, const Point& p) {
     std::cout << name << ": ";
     if (bsp(a, b, c, p))
         std::cout << "inside" << std::endl;
@@ -18,7 +19,7 @@ static void test(const char *name, const Point &a, const Point &b,
         std::cout << "outside" << std::endl;
 }
 
-int main(void) {
+int main() {
     const Point a = Point(0.0f, 1.2f);
     const Point b = Point(1.5f, 0.0f);
     const Point c = Point(0.0f, 0.0f);

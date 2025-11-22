@@ -6,7 +6,7 @@
 /*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:19:58 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/11/22 14:02:47 by ttsubo           ###   ########.fr       */
+/*   Updated: 2025/11/22 14:08:49 by ttsubo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "Fixed.hpp"
 
-int main(void) {
+int main() {
     Fixed a;
     Fixed const b(10);
     Fixed const c(42.42f);

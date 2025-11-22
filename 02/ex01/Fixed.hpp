@@ -13,17 +13,17 @@
 
 class Fixed {
    public:
-    Fixed(void);
+    Fixed();
     Fixed(const Fixed& other);
     Fixed(const int i);
     Fixed(const float f);
     Fixed& operator=(const Fixed& other);
     ~Fixed();
 
-    int getRawBits(void) const;
+    int getRawBits() const;
     void setRawBits(int const raw);
-    float toFloat(void) const;
-    int toInt(void) const;
+    float toFloat() const;
+    int toInt() const;
 
    private:
     int val;
