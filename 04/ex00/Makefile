@@ -6,7 +6,7 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 12:35:13 by ttsubo            #+#    #+#              #
-#    Updated: 2025/11/21 07:40:47 by ttsubo           ###   ########.fr        #
+#    Updated: 2025/11/22 12:14:20 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= Animals
 CPP 	= c++
 CPP_FLG = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all:$(NAME)

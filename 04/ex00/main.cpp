@@ -6,10 +6,13 @@
  *
  */
 
+#include <iostream>
+
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include <iostream>
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 static void test_copy_ctor_animal() {
     std::cout << "===Animal::copy ctor test===" << std::endl;
@@ -69,10 +72,11 @@ static void test_assign_cat() {
 }
 
 static void test_ft_subject() {
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+
     std::cout << "===42 Subject basic test===" << std::endl;
-    const Animal *meta = new Animal();
-    const Animal *j = new Dog();
-    const Animal *i = new Cat();
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     i->makeSound();
@@ -83,6 +87,15 @@ static void test_ft_subject() {
     delete j;
 }
 
+static void test_wrong_animal() {
+    const WrongAnimal* wa = new WrongCat();
+
+    std::cout << "===Wrong animal test===" << std::endl;
+    std::cout << wa->getType() << " " << std::endl;
+    wa->makeSound();
+    delete wa;
+}
+
 int main() {
     test_copy_ctor_animal();
     test_assign_animal();
@@ -91,4 +104,5 @@ int main() {
     test_copy_ctor_cat();
     test_assign_cat();
     test_ft_subject();
+    test_wrong_animal();
 }
