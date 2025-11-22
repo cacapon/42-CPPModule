@@ -9,14 +9,12 @@
 #include "Animal.hpp"
 
 #include <iostream>
-#include <string>
 
 Animal::Animal() : type("Animal") {
     std::cout << "Animal::default ctor" << std::endl;
 }
 
-Animal::Animal(const Animal& other) {
-    this->type = other.type;
+Animal::Animal(const Animal& other) : type(other.type) {
     std::cout << "Animal::copy ctor" << std::endl;
 }
 
@@ -24,6 +22,7 @@ Animal& Animal::operator=(const Animal& other) {
     if (this != &other) {
         this->type = other.type;
     }
+    std::cout << "Animal::operator=" << std::endl;
     return *this;
 }
 

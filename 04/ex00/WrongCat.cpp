@@ -14,10 +14,8 @@ WrongCat::WrongCat() : WrongAnimal() {
     this->type = "WrongCat";
     std::cout << "WrongCat::default ctor" << std::endl;
 }
+
 WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other) {
-    if (this != &other) {
-        this->type = other.type;
-    }
     std::cout << "WrongCat::copy ctor" << std::endl;
 }
 
@@ -25,6 +23,7 @@ WrongCat& WrongCat::operator=(const WrongCat& other) {
     if (this != &other) {
         this->type = other.type;
     }
+    std::cout << "WrongCat::operator=" << std::endl;
     return *this;
 }
 

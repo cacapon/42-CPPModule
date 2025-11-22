@@ -14,8 +14,7 @@ WrongAnimal::WrongAnimal() : type("WrongAnimal") {
     std::cout << "WrongAnimal::default ctor" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& other) {
-    this->type = other.type;
+WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type) {
     std::cout << "WrongAnimal::copy ctor" << std::endl;
 }
 
@@ -23,6 +22,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other) {
     if (this != &other) {
         this->type = other.type;
     }
+    std::cout << "WrongAnimal::operator=" << std::endl;
     return *this;
 }
 

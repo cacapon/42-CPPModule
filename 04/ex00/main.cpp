@@ -17,7 +17,7 @@
 static void test_copy_ctor_animal() {
     std::cout << "===Animal::copy ctor test===" << std::endl;
     Animal a;
-    Animal b = Animal(a);
+    Animal b(a);
 
     std::cout << b.getType() << std::endl;
     b.makeSound();
@@ -36,7 +36,7 @@ static void test_assign_animal() {
 static void test_copy_ctor_dog() {
     std::cout << "===Dog::copy ctor test===" << std::endl;
     Dog a;
-    Dog b = Dog(a);
+    Dog b(a);
 
     std::cout << b.getType() << std::endl;
     b.makeSound();
@@ -55,7 +55,7 @@ static void test_assign_dog() {
 static void test_copy_ctor_cat() {
     std::cout << "===Cat::copy ctor test===" << std::endl;
     Cat a;
-    Cat b = Cat(a);
+    Cat b(a);
 
     std::cout << b.getType() << std::endl;
     b.makeSound();
