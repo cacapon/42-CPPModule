@@ -11,10 +11,10 @@
 
 #include "Animal.hpp"
 class Dog : public Animal {
-  public:
+   public:
     Dog();
-    Dog(const Dog &other);
-    Dog &operator=(const Dog &other);
+    Dog(const Dog& other);
+    Dog& operator=(const Dog& other);
     virtual ~Dog();
     virtual void makeSound() const;
 };

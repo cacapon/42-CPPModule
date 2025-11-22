@@ -7,20 +7,21 @@
  */
 
 #include "Cat.hpp"
+
 #include <iostream>
 
 Cat::Cat() : Animal() {
     this->type = "Cat";
     std::cout << "Cat::default ctor" << std::endl;
 }
-Cat::Cat(const Cat &other) : Animal(other) {
+Cat::Cat(const Cat& other) : Animal(other) {
     if (this != &other) {
         this->type = other.type;
     }
     std::cout << "Cat::copy ctor" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &other) {
+Cat& Cat::operator=(const Cat& other) {
     if (this != &other) {
         this->type = other.type;
     }

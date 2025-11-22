@@ -7,21 +7,21 @@
  */
 
 #include "Dog.hpp"
-#include "Animal.hpp"
+
 #include <iostream>
 
 Dog::Dog() : Animal() {
     this->type = "Dog";
     std::cout << "Dog::default ctor" << std::endl;
 }
-Dog::Dog(const Dog &other) : Animal(other) {
+Dog::Dog(const Dog& other) : Animal(other) {
     if (this != &other) {
         this->type = other.type;
     }
     std::cout << "Dog::copy ctor" << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &other) {
+Dog& Dog::operator=(const Dog& other) {
     if (this != &other) {
         this->type = other.type;
     }

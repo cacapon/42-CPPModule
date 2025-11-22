@@ -7,19 +7,19 @@
  */
 
 #include "WrongAnimal.hpp"
+
 #include <iostream>
-#include <string>
 
 WrongAnimal::WrongAnimal() : type("WrongAnimal") {
     std::cout << "WrongAnimal::default ctor" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &other) {
+WrongAnimal::WrongAnimal(const WrongAnimal& other) {
     this->type = other.type;
     std::cout << "WrongAnimal::copy ctor" << std::endl;
 }
 
-WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other) {
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other) {
     if (this != &other) {
         this->type = other.type;
     }
