@@ -7,10 +7,10 @@
  */
 
 #include <iostream>
+
 #include "Fixed.hpp"
 
-int main(void)
-{
+int main() {
     Fixed a;
     Fixed b(a);
     Fixed c;
