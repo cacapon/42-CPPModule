@@ -6,11 +6,12 @@
 /*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/13 12:19:58 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/11/11 08:18:27 by ttsubo           ###   ########.fr       */
+/*   Updated: 2025/11/22 14:02:47 by ttsubo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+
 #include "Fixed.hpp"
 
 int main(void) {
