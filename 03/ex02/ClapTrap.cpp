@@ -12,9 +12,9 @@
 #include <string>
 
 const std::string ClapTrap::DEFAULT_NAME = "???";
-const unsigned int BASE_HP = 10;
-const unsigned int BASE_EP = 10;
-const unsigned int BASE_ATK = 0;
+const unsigned int ClapTrap::BASE_HP = 10;
+const unsigned int ClapTrap::BASE_EP = 10;
+const unsigned int ClapTrap::BASE_ATK = 0;
 
 ClapTrap::ClapTrap()
     : name(DEFAULT_NAME), hp(BASE_HP), ep(BASE_EP), atk(BASE_ATK) {
