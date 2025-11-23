@@ -6,22 +6,22 @@
  *
  */
 
-#include "ScavTrap.hpp"
 #include <iostream>
-#include <ostream>
+
+#include "ScavTrap.hpp"
 
 int main(void) {
     {
         std::cout << "<ctor/dtor test>" << std::endl;
-        ScavTrap default_ctor = ScavTrap();
-        ScavTrap name_ctor = ScavTrap("NameCtor");
-        ScavTrap copy_ctor = ScavTrap(default_ctor);
+        ScavTrap default_ctor;
+        ScavTrap name_ctor("NameCtor");
+        ScavTrap copy_ctor(default_ctor);
     }
     std::cout << "================" << std::endl;
     {
         // normal test
         std::cout << "<normal test>" << std::endl;
-        ScavTrap normal = ScavTrap("Normal");
+        ScavTrap normal("Normal");
         normal.attack("Scav1");
         normal.takeDamage(1);
         normal.beRepaired(1);
@@ -30,7 +30,7 @@ int main(void) {
     std::cout << "================" << std::endl;
     {
         std::cout << "<ep test1: Crap ep>" << std::endl;
-        ScavTrap ep1 = ScavTrap("EPTest1");
+        ScavTrap ep1("EPTest1");
         for (int i = 0; i < 5; i++) {
             ep1.attack("Enemy");
             ep1.beRepaired(1);
@@ -43,7 +43,7 @@ int main(void) {
     std::cout << "================" << std::endl;
     {
         std::cout << "<ep test2: Scav ep>" << std::endl;
-        ScavTrap ep2 = ScavTrap("EPTest2");
+        ScavTrap ep2("EPTest2");
         for (int i = 0; i < 25; i++) {
             ep2.attack("Enemy");
             ep2.beRepaired(1);
@@ -56,7 +56,7 @@ int main(void) {
     std::cout << "================" << std::endl;
     {
         std::cout << "<hp test1: Clap hp>" << std::endl;
-        ScavTrap hp1 = ScavTrap("HPTest1");
+        ScavTrap hp1("HPTest1");
         hp1.takeDamage(10);
         hp1.attack("Attack Success");
         hp1.beRepaired(1);
@@ -66,7 +66,7 @@ int main(void) {
     std::cout << "================" << std::endl;
     {
         std::cout << "<hp test2: Scav hp>" << std::endl;
-        ScavTrap hp2 = ScavTrap("HPTest2");
+        ScavTrap hp2("HPTest2");
         hp2.takeDamage(100);
         hp2.attack("Attack Failed");
         hp2.beRepaired(1);
