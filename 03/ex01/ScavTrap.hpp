@@ -11,20 +11,18 @@
 #include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
-  public:
+   public:
     ScavTrap();
-    ScavTrap(const std::string &name);
-    ScavTrap(const ScavTrap &other);
-    ScavTrap &operator=(const ScavTrap &other);
+    ScavTrap(const std::string& name);
+    ScavTrap(const ScavTrap& other);
+    ScavTrap& operator=(const ScavTrap& other);
     ~ScavTrap();
     void guardGate();
 
-  protected:
+   protected:
     static const unsigned int HP = 100;
     static const unsigned int EP = 50;
     static const unsigned int ATK = 20;
-
-  private:
     virtual void showName() const;
 };
 
