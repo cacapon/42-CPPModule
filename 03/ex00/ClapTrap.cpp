@@ -7,8 +7,8 @@
  */
 
 #include "ClapTrap.hpp"
+
 #include <iostream>
-#include <ostream>
 #include <string>
 
 const std::string ClapTrap::DEFAULT_NAME = "???";
@@ -18,18 +18,18 @@ ClapTrap::ClapTrap()
     showName();
     std::cout << ": default ctor" << std::endl;
 }
-ClapTrap::ClapTrap(const std::string &name)
+ClapTrap::ClapTrap(const std::string& name)
     : name(name), hp(BASE_HP), ep(BASE_EP), atk(BASE_ATK) {
     showName();
     std::cout << ": name ctor" << std::endl;
 }
-ClapTrap::ClapTrap(const ClapTrap &other)
+ClapTrap::ClapTrap(const ClapTrap& other)
     : name(other.name), hp(other.hp), ep(other.ep), atk(other.atk) {
     showName();
     std::cout << ": copy ctor" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
     if (this != &other) {
         this->name = other.name;
         this->hp = other.hp;
@@ -44,7 +44,7 @@ ClapTrap::~ClapTrap() {
     std::cout << ": dtor" << std::endl;
 }
 
-void ClapTrap::attack(const std::string &target) {
+void ClapTrap::attack(const std::string& target) {
     if (this->ep == 0) {
         showName();
         std::cout << ": attack NG: ep=0" << std::endl;
@@ -67,10 +67,10 @@ void ClapTrap::takeDamage(unsigned int amount) {
         std::cout << ": takeDamage NG: hp=0" << std::endl;
         return;
     }
+    this->hp = this->hp <= amount ? 0 : this->hp - amount;
     showName();
     std::cout << ": takeDamage OK: " << amount << " points of damage!"
               << std::endl;
-    this->hp = this->hp <= amount ? 0 : this->hp - amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
@@ -91,7 +91,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
     this->hp += amount;
 }
 
-const std::string &ClapTrap::getName() const { return this->name; }
+const std::string& ClapTrap::getName() const { return this->name; }
 unsigned int ClapTrap::getHp() const { return this->hp; }
 unsigned int ClapTrap::getEp() const { return this->ep; }
 unsigned int ClapTrap::getAtk() const { return this->atk; }
