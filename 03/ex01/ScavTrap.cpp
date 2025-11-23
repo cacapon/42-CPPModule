@@ -7,7 +7,7 @@
  */
 
 #include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+
 #include <iostream>
 
 ScavTrap::ScavTrap() : ClapTrap() {
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
     std::cout << "default ctor" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
     this->hp = HP;
     this->ep = EP;
     this->atk = ATK;
@@ -26,7 +26,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
     std::cout << "name ctor" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
     this->hp = other.hp;
     this->ep = other.ep;
     this->atk = other.atk;
@@ -34,7 +34,7 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
     std::cout << "copy ctor" << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
     if (this != &other) {
         ClapTrap::operator=(other);
         this->hp = other.hp;
