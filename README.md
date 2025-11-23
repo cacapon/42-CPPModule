@@ -3,8 +3,8 @@
 
 ## 進捗
 - [x] Module 00
-- [ ] Module 01
-- [ ] Module 02
+- [x] Module 01
+- [x] Module 02
 - [ ] Module 03
 - [ ] Module 04
 - [ ] Module 05
