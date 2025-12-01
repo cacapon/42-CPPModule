@@ -58,9 +58,11 @@ void MateriaSource::learnMateria(AMateria* m) {
     for (int i = 0; i < MATERIA_MAX; i++) {
         if (!this->inventory[i]) {
             this->inventory[i] = m->clone();
+            delete m;
             return;
         }
     }
+    delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const& type) {
