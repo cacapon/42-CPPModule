@@ -9,24 +9,23 @@
 #ifndef FRAGTRAP_HPP
 #define FRAGTRAP_HPP
 
-#include "ClapTrap.hpp"
 #include <string>
 
+#include "ClapTrap.hpp"
+
 class FragTrap : public ClapTrap {
-  public:
+   public:
     FragTrap();
-    FragTrap(const std::string &name);
-    FragTrap(const FragTrap &other);
-    FragTrap &operator=(const FragTrap &other);
+    FragTrap(const std::string& name);
+    FragTrap(const FragTrap& other);
+    FragTrap& operator=(const FragTrap& other);
     ~FragTrap();
     void highFivesGuys();
 
-  protected:
+   protected:
     static const unsigned int HP = 100;
     static const unsigned int EP = 100;
     static const unsigned int ATK = 30;
-
-  private:
     virtual void showName() const;
 };
 
