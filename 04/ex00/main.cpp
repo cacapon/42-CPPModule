@@ -87,11 +87,11 @@ static void test_ft_subject() {
     delete j;
 }
 
-static void test_wrong_animal() {
+static void test_wrong() {
+    std::cout << "===wrong test===" << std::endl;
     const WrongAnimal* wa = new WrongCat();
 
-    std::cout << "===Wrong animal test===" << std::endl;
-    std::cout << wa->getType() << " " << std::endl;
+    std::cout << wa->getType() << std::endl;
     wa->makeSound();
     delete wa;
 }
@@ -104,5 +104,5 @@ int main() {
     test_copy_ctor_cat();
     test_assign_cat();
     test_ft_subject();
-    test_wrong_animal();
+    test_wrong();
 }
