@@ -28,19 +28,19 @@ static std::string itos(int n) {
 Character::Character() {
     ShowLog("default ctor");
     this->name = "default";
-    for (int i = 0; i < this->MATERIA_MAX; i++) inventory[i] = NULL;
+    for (int i = 0; i < MATERIA_MAX; i++) inventory[i] = NULL;
 }
 
 Character::Character(const std::string& name) {
     ShowLog("name ctor");
     this->name = name;
-    for (int i = 0; i < this->MATERIA_MAX; i++) inventory[i] = NULL;
+    for (int i = 0; i < MATERIA_MAX; i++) inventory[i] = NULL;
 }
 
 Character::Character(const Character& other) {
     ShowLog("copy ctor");
     name = other.getName();
-    for (int i = 0; i < this->MATERIA_MAX; i++) {
+    for (int i = 0; i < MATERIA_MAX; i++) {
         if (other.inventory[i])
             this->inventory[i] = other.inventory[i]->clone();
         else
@@ -52,7 +52,7 @@ Character& Character::operator=(const Character& other) {
     ShowLog("operator=");
     if (this != &other) {
         this->name = other.getName();
-        for (int i = 0; i < this->MATERIA_MAX; i++) {
+        for (int i = 0; i < MATERIA_MAX; i++) {
             if (this->inventory[i]) delete inventory[i];
             if (other.inventory[i])
                 this->inventory[i] = other.inventory[i]->clone();
@@ -65,7 +65,7 @@ Character& Character::operator=(const Character& other) {
 
 Character::~Character() {
     ShowLog("dtor");
-    for (int i = 0; i < this->MATERIA_MAX; i++) {
+    for (int i = 0; i < MATERIA_MAX; i++) {
         if (this->inventory[i]) delete this->inventory[i];
     }
 }
@@ -77,7 +77,7 @@ void Character::equip(AMateria* m) {
         ShowLog("equip:Error:Materia is NULL.");
         return;
     }
-    for (int i = 0; i < this->MATERIA_MAX; i++) {
+    for (int i = 0; i < MATERIA_MAX; i++) {
         if (!this->inventory[i]) {
             ShowLog("equip:" + m->getType());
             this->inventory[i] = m;
@@ -88,7 +88,7 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-    if (idx < 0 || this->MATERIA_MAX <= idx) {
+    if (idx < 0 || MATERIA_MAX <= idx) {
         ShowLog("unequip:Error:Invalid index is " + itos(idx));
         return;
     }
@@ -102,7 +102,7 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
-    if (idx < 0 || this->MATERIA_MAX <= idx) {
+    if (idx < 0 || MATERIA_MAX <= idx) {
         ShowLog("use:Error:Invalid index is " + itos(idx));
         return;
     }
