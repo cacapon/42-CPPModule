@@ -11,6 +11,8 @@
 
 #include <string>
 
+#include "log.hpp"
+
 class AMateria;
 
 class ICharacter {

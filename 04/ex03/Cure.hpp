@@ -10,6 +10,7 @@
 #define CURE_HPP
 
 #include "AMateria.hpp"
+#include "log.hpp"
 
 class Cure : public AMateria {
    public:

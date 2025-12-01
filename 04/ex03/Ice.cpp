@@ -12,24 +12,20 @@
 
 #include "ICharacter.hpp"
 
-static void ShowLog(const std::string detail) {
-    std::cout << "Ice::" << detail << std::endl;
-}
+Ice::Ice() : AMateria("ice") { ShowLog("Ice", "default ctor"); }
 
-Ice::Ice() : AMateria("ice") { ShowLog("default ctor"); }
-
-Ice::Ice(const Ice &other) : AMateria(other) { ShowLog("copy ctor"); }
+Ice::Ice(const Ice &other) : AMateria(other) { ShowLog("Ice", "copy ctor"); }
 
 Ice &Ice::operator=(const Ice &other) {
-    ShowLog("operator=");
+    ShowLog("Ice", "operator=");
     if (this != &other) AMateria::operator=(other);
     return *this;
 }
 
-Ice::~Ice() { ShowLog("dtor"); }
+Ice::~Ice() { ShowLog("Ice", "dtor"); }
 
 AMateria *Ice::clone() const {
-    ShowLog("clone");
+    ShowLog("Ice", "clone");
     return new Ice(*this);
 }
 

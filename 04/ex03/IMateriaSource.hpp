@@ -10,6 +10,7 @@
 #define IMATERIASOURCE_HPP
 
 #include "AMateria.hpp"
+#include "log.hpp"
 
 class IMateriaSource {
    public:

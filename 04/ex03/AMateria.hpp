@@ -12,6 +12,8 @@
 #include <string>
 
 #include "ICharacter.hpp"
+#include "log.hpp"
+
 class AMateria {
    public:
     AMateria();
