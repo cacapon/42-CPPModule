@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-void ShowLog(const std::string cls, const std::string detail) {
+void ShowLog(const std::string &cls, const std::string &detail) {
 #ifdef DEBUG
     std::cout << cls << "::" << detail << std::endl;
 #else

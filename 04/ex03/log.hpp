@@ -10,6 +10,6 @@
 #define LOG_HPP
 
 #include <string>
-void ShowLog(const std::string cls, const std::string detail);
+void ShowLog(const std::string &cls, const std::string &detail);
 
 #endif
