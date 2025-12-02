@@ -54,12 +54,12 @@ void Bureaucrat::demote() {
 const std::string& Bureaucrat::getName() const { return this->name; }
 int Bureaucrat::getGrade() const { return this->grade; }
 
-const char* GradeTooHighException::what() const throw() {
-    return "GradeTooHighException";
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+    return "Bureaucrat::GradeTooHighException";
 }
 
-const char* GradeTooLowException::what() const throw() {
-    return "GradeTooLowException";
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+    return "Bureaucrat::GradeTooLowException";
 }
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& bureaucrat) {
