@@ -12,24 +12,22 @@
 
 #include "ICharacter.hpp"
 
-static void ShowLog(const std::string detail) {
-    std::cout << "Cure::" << detail << std::endl;
+Cure::Cure() : AMateria("cure") { ShowLog("Cure", "default ctor"); }
+
+Cure::Cure(const Cure &other) : AMateria(other) {
+    ShowLog("Cure", "copy ctor");
 }
 
-Cure::Cure() : AMateria("cure") { ShowLog("default ctor"); }
-
-Cure::Cure(const Cure &other) : AMateria(other) { ShowLog("copy ctor"); }
-
 Cure &Cure::operator=(const Cure &other) {
-    ShowLog("operator=");
+    ShowLog("Cure", "operator=");
     if (this != &other) AMateria::operator=(other);
     return *this;
 }
 
-Cure::~Cure() { ShowLog("dtor"); }
+Cure::~Cure() { ShowLog("Cure", "dtor"); }
 
 AMateria *Cure::clone() const {
-    ShowLog("clone");
+    ShowLog("Cure", "clone");
     return new Cure(*this);
 }
 

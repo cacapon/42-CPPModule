@@ -11,6 +11,8 @@
 
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
+#include "log.hpp"
+
 class Character : public ICharacter {
    public:
     Character();

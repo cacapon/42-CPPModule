@@ -10,8 +10,4 @@
 
 #include <iostream>
 
-static void ShowLog(const std::string detail) {
-    std::cout << "ICharacter::" << detail << std::endl;
-}
-
-ICharacter::~ICharacter() { ShowLog("dtor"); }
+ICharacter::~ICharacter() { ShowLog("ICharacter", "dtor"); }

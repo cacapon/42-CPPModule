@@ -10,31 +10,27 @@
 
 #include <iostream>
 
-static void ShowLog(const std::string detail) {
-    std::cout << "AMateria::" << detail << std::endl;
-}
-
-AMateria::AMateria() { ShowLog("default ctor"); }
+AMateria::AMateria() { ShowLog("Amateria", "default ctor"); }
 
 AMateria::AMateria(std::string const &type) : type(type) {
-    ShowLog("name ctor");
+    ShowLog("Amateria", "name ctor");
 }
 
 AMateria::AMateria(const AMateria &other) : type(other.type) {
-    ShowLog("copy ctor");
+    ShowLog("Amateria", "copy ctor");
 }
 
 AMateria &AMateria::operator=(const AMateria &other) {
-    ShowLog("operator=");
+    ShowLog("Amateria", "operator=");
     if (this != &other) this->type = other.getType();
     return *this;
 }
 
-AMateria::~AMateria() { ShowLog("dtor"); }
+AMateria::~AMateria() { ShowLog("Amateria", "dtor"); }
 
 std::string const &AMateria::getType() const { return this->type; };
 
 void AMateria::use(ICharacter &target) {
     (void)target;
-    ShowLog("use::not working.");
+    ShowLog("Amateria", "use::not working.");
 }

@@ -13,17 +13,13 @@
 
 const int MateriaSource::MATERIA_MAX = 4;
 
-static void ShowLog(const std::string detail) {
-    std::cout << "MateriaSource::" << detail << std::endl;
-}
-
 MateriaSource::MateriaSource() {
-    ShowLog("default ctor");
+    ShowLog("MateriaSource", "default ctor");
     for (int i = 0; i < MATERIA_MAX; i++) this->inventory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other) {
-    ShowLog("copy ctor");
+    ShowLog("MateriaSource", "copy ctor");
     for (int i = 0; i < MATERIA_MAX; i++) {
         if (other.inventory[i])
             this->inventory[i] = other.inventory[i]->clone();
@@ -33,7 +29,7 @@ MateriaSource::MateriaSource(const MateriaSource& other) {
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
-    ShowLog("operator=");
+    ShowLog("MateriaSource", "operator=");
     if (this != &other) {
         for (int i = 0; i < MATERIA_MAX; i++) {
             if (this->inventory[i]) delete this->inventory[i];
@@ -47,7 +43,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 }
 
 MateriaSource::~MateriaSource() {
-    ShowLog("dtor");
+    ShowLog("MateriaSource", "dtor");
     for (int i = 0; i < MATERIA_MAX; i++) {
         if (this->inventory[i]) delete this->inventory[i];
     }
