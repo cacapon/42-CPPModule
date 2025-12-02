@@ -10,8 +10,4 @@
 
 #include <iostream>
 
-static void ShowLog(const std::string detail) {
-    std::cout << "IMateriaSource::" << detail << std::endl;
-}
-
-IMateriaSource::~IMateriaSource() { ShowLog("dtor"); }
+IMateriaSource::~IMateriaSource() { ShowLog("IMateriaSource", "dtor"); }

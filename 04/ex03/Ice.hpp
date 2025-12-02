@@ -10,6 +10,7 @@
 #define ICE_HPP
 
 #include "AMateria.hpp"
+#include "log.hpp"
 
 class Ice : public AMateria {
    public:
