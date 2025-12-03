@@ -45,6 +45,12 @@ Form& Form::operator=(const Form& other) {
 
 Form::~Form() { ShowLog("dtor"); }
 
+/**
+ * @brief
+ *
+ * @param b
+ * @note
+ */
 void Form::beSigned(Bureaucrat& b) {
     if (b.getGrade() <= this->getSignedGrade())
         this->is_signed = true;
@@ -65,10 +71,9 @@ const char* Form::GradeTooLowException::what() const throw() {
     return "Form::GradeTooLowException";
 }
 
-std::ostream& operator<<(std::ostream& o, const Form& form) {
-    o << "Form(name=" << form.getName()
-      << ", signed_grade=" << form.getSignedGrade()
-      << ", exec_grade=" << form.getExecGrade()
-      << ", is_signed=" << form.getIsSigned() << ")";
+std::ostream& operator<<(std::ostream& o, const Form& f) {
+    o << "Form(name=" << f.getName() << ", signed_grade=" << f.getSignedGrade()
+      << ", exec_grade=" << f.getExecGrade()
+      << ", is_signed=" << f.getIsSigned() << ")";
     return (o);
 }

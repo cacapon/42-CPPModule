@@ -6,12 +6,12 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/02 07:07:27 by ttsubo            #+#    #+#              #
-#    Updated: 2025/12/02 07:12:51 by ttsubo           ###   ########.fr        #
+#    Updated: 2025/12/03 00:37:00 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	= Bureaucrat
+NAME	= bureaucrat
 CPP 	= c++
 CPP_FLG = -std=c++98 -Wall -Wextra -Werror
 

@@ -42,6 +42,6 @@ class Form {
     bool is_signed;
 };
 
-std::ostream& operator<<(std::ostream& o, const Form& form);
+std::ostream& operator<<(std::ostream& o, const Form& f);
 
 #endif

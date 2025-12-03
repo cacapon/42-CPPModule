@@ -6,12 +6,12 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/02 07:07:27 by ttsubo            #+#    #+#              #
-#    Updated: 2025/12/02 08:41:55 by ttsubo           ###   ########.fr        #
+#    Updated: 2025/12/03 00:36:49 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	= Form 
+NAME	= form 
 CPP 	= c++
 CPP_FLG = -std=c++98 -Wall -Wextra -Werror
 

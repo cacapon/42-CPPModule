@@ -41,6 +41,6 @@ class Bureaucrat {
     int grade;
 };
 
-std::ostream& operator<<(std::ostream& o, const Bureaucrat& Bureaucrat);
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& b);
 
 #endif
