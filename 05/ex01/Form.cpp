@@ -52,6 +52,7 @@ Form::~Form() { ShowLog("dtor"); }
  * @note
  */
 void Form::beSigned(Bureaucrat& b) {
+    if (this->is_signed) return;
     if (b.getGrade() <= this->getSignedGrade())
         this->is_signed = true;
     else
