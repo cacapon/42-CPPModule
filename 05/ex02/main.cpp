@@ -6,8 +6,6 @@
  *
  */
 
-#include <cstdlib>
-#include <ctime>
 #include <iostream>
 #include <string>
 
@@ -40,7 +38,6 @@ static void test(const std::string &testname, int grade) {
 }
 
 int main() {
-    std::srand(std::time(NULL));
     int i;
     while (true) {
         std::cout << "\033c" << std::flush;

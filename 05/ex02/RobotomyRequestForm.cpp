@@ -14,7 +14,12 @@
 #include <string>
 
 static bool randomHalf() {
-    return std::rand() % 2 == 0;  // 50%でtrue, false
+    static bool initialized = false;
+    if (!initialized) {
+        std::srand(std::time(NULL));
+        initialized = true;
+    }
+    return std::rand() % 2 == 0;
 }
 
 const int RobotomyRequestForm::REQUIRED_SIGN_GRADE = 72;

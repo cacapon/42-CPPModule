@@ -47,6 +47,7 @@ AForm::AForm(const AForm& other)
     ShowLog("copy ctor");
 }
 
+// name, signed_grade, and exec_grade are const, so they cannot be copied.
 AForm& AForm::operator=(const AForm& other) {
     if (this != &other) {
         this->is_signed = other.is_signed;
