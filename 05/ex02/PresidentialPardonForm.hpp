@@ -1,12 +1,30 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:39:42 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:39:43 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file PresidentialPardonForm.hpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief
+ *
+ *
+ */
 
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
+
+#include "AForm.hpp"
+
+class Bureaucrat;
+
+class PresidentialPardonForm : public AForm {
+   public:
+    PresidentialPardonForm(const std::string& target);
+    PresidentialPardonForm(const PresidentialPardonForm& other);
+    PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
+    ~PresidentialPardonForm();
+    void execute(Bureaucrat const& executor) const;
+
+   private:
+    static const int REQUIRED_SIGN_GRADE;
+    static const int REQUIRED_EXEC_GRADE;
+    std::string target;
+};
+
+#endif
