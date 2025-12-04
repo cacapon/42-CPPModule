@@ -12,6 +12,12 @@
 #include "Bureaucrat.hpp"
 #define TEST_COUNT 9
 
+void waitEnter() {
+    std::cout << "Press ENTER to continue...";
+    if (std::cin.peek() == '\n') std::cin.get();
+    std::cin.get();
+}
+
 static void test_promote(Bureaucrat &b, int count) {
     std::cout << "test_promote::" << b.getName() << "::" << count << std::endl;
     for (int i = 0; i < count; i++) b.promote();
@@ -61,6 +67,7 @@ static void test_copy() {
 int main() {
     int i;
     while (true) {
+        std::cout << "\033c" << std::flush;
         std::cout << "cmd?[0-" << TEST_COUNT - 1 << "]>>";
         if (!(std::cin >> i)) break;
         if (i < 0 || i > TEST_COUNT - 1) break;
@@ -93,6 +100,7 @@ int main() {
                 test("Demote edge test", 149, 0, 1, NULL, test_demote);
                 break;
         }
+        waitEnter();
     }
     std::cout << "test end" << std::endl;
     return 0;
