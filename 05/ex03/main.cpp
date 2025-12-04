@@ -21,7 +21,7 @@ void waitEnter() {
 }
 
 void test(const std::string& testname, const std::string& formname,
-          const ::std::string& target) {
+          const std::string& target) {
     std::cout << "<<<" << testname << ">>>" << std::endl;
     try {
         Intern i;
