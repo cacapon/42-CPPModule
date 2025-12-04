@@ -8,6 +8,8 @@
 
 #include "AForm.hpp"
 
+#include <iostream>
+
 #include "Bureaucrat.hpp"
 
 static void ShowLog(const std::string detail) {
