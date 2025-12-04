@@ -5,7 +5,7 @@
 - [x] Module 00
 - [x] Module 01
 - [x] Module 02
-- [ ] Module 03
+- [x] Module 03
 - [ ] Module 04
 - [ ] Module 05
 - [ ] Module 06
