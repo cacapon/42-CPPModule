@@ -8,11 +8,16 @@
 
 #include "ScalarConverter.hpp"
 
+#include <cctype>
+#include <cerrno>
+#include <cfloat>
 #include <cstdlib>
 #include <iostream>
 #include <string>
 
-using std::atoi;
+const std::string ScalarConverter::kPseudo[8] = {
+    "nan", "inf", "+inf", "-inf", "nanf", "inff", "+inff", "-inff"};
+const int ScalarConverter::kPseudoFloatStart = 4;
 
 static void ShowLog(const std::string detail) {
 #ifdef DEBUG
@@ -63,13 +68,22 @@ bool ScalarConverter::isInt(const std::string &s) {
         return false;
 }
 
+// note:
+// FLT_MIN is a number infinitely close to zero. Therefore, it cannot be used
+// for minimum value checks.
+// Since the maximum and minimum values of float are symmetrical,
+// -FLT_MAX represents the minimum value.
 bool ScalarConverter::isFloat(const std::string &s) {
-    (void)s;
-    return false;
+    if (!regexFloat(s)) return false;
+    double d = std::strtod(s.c_str(), NULL);
+    return -FLT_MAX <= d && d <= FLT_MAX;
 }
+
 bool ScalarConverter::isDouble(const std::string &s) {
-    (void)s;
-    return false;
+    if (!regexDouble(s)) return false;
+    errno = 0;
+    std::strtod(s.c_str(), NULL);
+    return errno != ERANGE;
 }
 
 /* helper methods */
@@ -96,7 +110,8 @@ bool ScalarConverter::regexInt(const std::string &s) {
     if (s.empty()) return false;
     if (s[i] == '+' || s[i] == '-') i++;
     size_t start = i;
-    while (i < s.length() && std::isdigit(s[i])) i++;
+    while (i < s.length() && std::isdigit(static_cast<unsigned char>(s[i])))
+        i++;
     if (start == i) return false;
     return i == s.length();
 }
@@ -146,6 +161,14 @@ bool ScalarConverter::decimalIsZero(const std::string &s) {
     return pos == lastDigit;
 }
 
+int ScalarConverter::getKeywordIndex(const std::string &s) {
+    size_t n = sizeof(kPseudo) / sizeof(kPseudo[0]);
+    for (size_t i = 0; i < n; i++) {
+        if (s == kPseudo[i]) return i;
+    }
+    return -1;
+}
+
 std::string ScalarConverter::extractIntegerPart(const std::string &s) {
     size_t pos = s.find('.');
     if (pos == std::string::npos) return s;
@@ -165,7 +188,6 @@ void ScalarConverter::fromChar(const std::string &s) {
 }
 
 void ScalarConverter::fromInt(const std::string &s) {
-    // TODO
     std::cout << "int: ";
     if (!isInt(s))
         std::cout << "impossible";
@@ -173,11 +195,33 @@ void ScalarConverter::fromInt(const std::string &s) {
         std::cout << std::atoi(s.c_str());
     std::cout << std::endl;
 }
+
 void ScalarConverter::fromFloat(const std::string &s) {
-    // TODO
-    (void)s;
+    int index = getKeywordIndex(s);
+    std::cout << "float: ";
+    if (index != -1) {
+        if (kPseudoFloatStart <= index)
+            std::cout << kPseudo[index];
+        else
+            std::cout << kPseudo[index] << "f";
+    } else if (!isFloat(s))
+        std::cout << "impossible";
+    else
+        std::cout << static_cast<float>(std::strtod(s.c_str(), NULL)) << "f";
+    std::cout << std::endl;
 }
+
 void ScalarConverter::fromDouble(const std::string &s) {
-    // TODO
-    (void)s;
+    int index = getKeywordIndex(s);
+    std::cout << "double: ";
+    if (index != -1) {
+        if (index < kPseudoFloatStart)
+            std::cout << kPseudo[index];
+        else
+            std::cout << kPseudo[index - kPseudoFloatStart];
+    } else if (!isDouble(s))
+        std::cout << "impossible";
+    else
+        std::cout << std::strtod(s.c_str(), NULL);
+    std::cout << std::endl;
 }

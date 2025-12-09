@@ -15,6 +15,11 @@ class ScalarConverter {
     static void convert(const std::string &s);
 
    private:
+    /* static const args */
+    static const std::string kPseudo[8];
+    static const int kPseudoFloatStart;
+
+   private:
     /* canonical form - private because instantiation is not allowed */
     ScalarConverter();
     ScalarConverter(const ScalarConverter &other);
@@ -35,6 +40,7 @@ class ScalarConverter {
     static bool regexFloat(const std::string &s);
     static bool regexDouble(const std::string &s);
     static bool decimalIsZero(const std::string &s);
+    static int getKeywordIndex(const std::string &s);
     static std::string extractIntegerPart(const std::string &s);
 
    private:
