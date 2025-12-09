@@ -54,7 +54,7 @@ ScalarConverter::~ScalarConverter() { ShowLog("Err:dtor"); }
 bool ScalarConverter::isChar(const std::string &s) {
     if (s.length() != 1) return false;
     unsigned char c = static_cast<unsigned char>(s[0]);
-    if (c > 127) return false;
+    if (std::isdigit(c)) return false;
     return true;
 }
 
@@ -176,15 +176,42 @@ std::string ScalarConverter::extractIntegerPart(const std::string &s) {
 }
 
 /* Output in that format. If not possible, return impossible. */
+
+/**
+ * @brief
+ *
+ * @param s
+ * @note Output range: 0-127 or 1 character
+ */
 void ScalarConverter::fromChar(const std::string &s) {
     std::cout << "char: ";
-    if (!isChar(s))
-        std::cout << "impossible";
-    else if (!std::isprint(s[0]))
-        std::cout << "Non displayable";
-    else
-        std::cout << "'" << s[0] << "'";
-    std::cout << std::endl;
+    if (isChar(s)) {
+        unsigned char c = static_cast<unsigned char>(s[0]);
+        if (std::isprint(c))
+            std::cout << "'" << c << "'";
+        else
+            std::cout << "Non displayable";
+        std::cout << std::endl;
+        return;
+    }
+
+    if (isInt(s) || isFloat(s) || isDouble(s)) {
+        double d = std::strtod(s.c_str(), NULL);
+        // d != d is nan check.
+        if (!(0 <= d && d <= 127) || d != d) {
+            std::cout << "impossible" << std::endl;
+            return;
+        }
+
+        unsigned char c = static_cast<unsigned char>(d);
+        if (std::isprint(c))
+            std::cout << "'" << c << "'";
+        else
+            std::cout << "Non displayable";
+        std::cout << std::endl;
+        return;
+    }
+    std::cout << "impossible" << std::endl;
 }
 
 void ScalarConverter::fromInt(const std::string &s) {
