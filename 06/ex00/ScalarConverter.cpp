@@ -228,27 +228,54 @@ void ScalarConverter::fromFloat(const std::string &s) {
     std::cout << "float: ";
     if (index != -1) {
         if (kPseudoFloatStart <= index)
-            std::cout << kPseudo[index];
+            std::cout << kPseudo[index] << std::endl;
         else
-            std::cout << kPseudo[index] << "f";
-    } else if (!isFloat(s))
-        std::cout << "impossible";
-    else
-        std::cout << static_cast<float>(std::strtod(s.c_str(), NULL)) << "f";
-    std::cout << std::endl;
+            std::cout << kPseudo[index] << "f" << std::endl;
+        return;
+    }
+    if (isInt(s)) {
+        int i = std::atoi(s.c_str());
+        std::cout << i << ".0f" << std::endl;
+        return;
+    }
+    if (isFloat(s) || isDouble(s)) {
+        double d = std::strtod(s.c_str(), NULL);
+        // d != d is nan check.
+        if (!(-FLT_MAX <= d && d <= FLT_MAX) || d != d) {
+            std::cout << "impossible" << std::endl;
+            return;
+        }
+        std::cout << d << "f" << std::endl;
+        return;
+    }
+    std::cout << "impossible" << std::endl;
 }
 
 void ScalarConverter::fromDouble(const std::string &s) {
     int index = getKeywordIndex(s);
     std::cout << "double: ";
     if (index != -1) {
-        if (index < kPseudoFloatStart)
-            std::cout << kPseudo[index];
+        // TODO
+        if (kPseudoFloatStart <= index)
+            std::cout << kPseudo[index - kPseudoFloatStart] << std::endl;
         else
-            std::cout << kPseudo[index - kPseudoFloatStart];
-    } else if (!isDouble(s))
-        std::cout << "impossible";
-    else
-        std::cout << std::strtod(s.c_str(), NULL);
-    std::cout << std::endl;
+            std::cout << kPseudo[index] << std::endl;
+        return;
+    }
+    if (isInt(s)) {
+        int i = std::atoi(s.c_str());
+        std::cout << i << ".0" << std::endl;
+        return;
+    }
+    if (isFloat(s) || isDouble(s)) {
+        double d = std::strtod(s.c_str(), NULL);
+        // d != d is nan check.
+        if (d != d) {
+            std::cout << "impossible" << std::endl;
+            return;
+        }
+        std::cout << d << std::endl;
+        return;
+    }
+    std::cout << "impossible" << std::endl;
 }
