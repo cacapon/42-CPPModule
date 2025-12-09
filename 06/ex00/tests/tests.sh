@@ -1,6 +1,6 @@
 #!/bin/sh
 
-EXEC=./scalarConverter
+EXEC=../scalarConverter
 
 while read line; do
     echo "===== INPUT: \"$line\" ====="
