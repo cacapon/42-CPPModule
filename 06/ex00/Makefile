@@ -6,7 +6,7 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 12:46:57 by ttsubo            #+#    #+#              #
-#    Updated: 2025/12/08 02:57:33 by ttsubo           ###   ########.fr        #
+#    Updated: 2025/12/09 07:59:13 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,22 +14,31 @@ NAME	= scalarConverter
 CPP 	= c++
 CPP_FLG = -std=c++98 -Wall -Wextra -Werror
 
-SRCS = 	main.cpp ScalarConverter.cpp
-OBJS = $(SRCS:.cpp=.o)
+SRCS_DIR = srcs
+INCS_DIR = incs
+OBJS_DIR = objs
+
+SRC 	= main.cpp ScalarConverter.cpp
+SRCS	= $(addprefix $(SRCS_DIR)/, $(SRC)) 
+OBJS 	= $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
 
 all:$(NAME)
+
+$(OBJS_DIR):
+	mkdir -p $(OBJS_DIR)
 
 $(NAME):$(OBJS)
 	$(CPP) $(CPP_FLG) $(OBJS) -o $@
 
-%.o:%.cpp
-	$(CPP) $(CPP_FLG) -c $< -o $@
+$(OBJS_DIR)/%.o:$(SRCS_DIR)/%.cpp | $(OBJS_DIR)
+	$(CPP) $(CPP_FLG) -I $(INCS_DIR) -c $< -o $@
 
 debug:
 	$(MAKE) CPP_FLG="$(CPP_FLG) -DDEBUG" re
 
 clean:
 	rm -rf $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
 	rm -rf $(NAME)
