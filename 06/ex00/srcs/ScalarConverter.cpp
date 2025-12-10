@@ -159,7 +159,7 @@ bool ScalarConverter::decimalIsZero(const std::string &s) {
     size_t i = dot + 1;
     size_t end = (s[s.length() - 1] == 'f') ? s.length() - 2 : s.length() - 1;
 
-    for (; i < end; i++)
+    for (; i <= end; i++)
         if (s[i] != '0') return false;
     return true;
 }
