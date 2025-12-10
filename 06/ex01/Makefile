@@ -6,11 +6,11 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 12:46:57 by ttsubo            #+#    #+#              #
-#    Updated: 2025/12/10 04:49:54 by ttsubo           ###   ########.fr        #
+#    Updated: 2025/12/10 05:03:01 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= scalarConverter 
+NAME	= serializer 
 CPP 	= c++
 CPP_FLG = -std=c++98 -Wall -Wextra -Werror
 
