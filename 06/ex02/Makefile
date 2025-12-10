@@ -6,7 +6,7 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 12:46:57 by ttsubo            #+#    #+#              #
-#    Updated: 2025/12/10 05:17:52 by ttsubo           ###   ########.fr        #
+#    Updated: 2025/12/10 05:58:04 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS_DIR = src
 INCS_DIR = inc
 OBJS_DIR = obj
 
-SRC		= main.cpp A.cpp B.cpp C.cpp Base.cpp
+SRC		= main.cpp A.cpp B.cpp C.cpp Base.cpp baseUtils.cpp
 SRCS	= $(addprefix $(SRCS_DIR)/, $(SRC))
 OBJS	= $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
 all:$(NAME)
