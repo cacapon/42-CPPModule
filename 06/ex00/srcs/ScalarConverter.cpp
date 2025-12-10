@@ -153,12 +153,15 @@ bool ScalarConverter::regexDouble(const std::string &s) {
 
 // Check whether the digit after the decimal point is zero.
 bool ScalarConverter::decimalIsZero(const std::string &s) {
-    size_t pos = s.find('.');
-    if (pos == std::string::npos) return true;
-    pos++;
-    while (pos < s.length() && s[pos] == '0') pos++;
-    size_t lastDigit = (s[s.length() - 1] == 'f') ? s.length() - 1 : s.length();
-    return pos == lastDigit;
+    size_t dot = s.find('.');
+    if (dot == std::string::npos) return true;
+
+    size_t i = dot + 1;
+    size_t end = (s[s.length() - 1] == 'f') ? s.length() - 2 : s.length() - 1;
+
+    for (; i < end; i++)
+        if (s[i] != '0') return false;
+    return true;
 }
 
 int ScalarConverter::getKeywordIndex(const std::string &s) {
