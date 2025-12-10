@@ -6,7 +6,7 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 12:46:57 by ttsubo            #+#    #+#              #
-#    Updated: 2025/12/10 05:13:46 by ttsubo           ###   ########.fr        #
+#    Updated: 2025/12/10 05:17:52 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,29 +18,29 @@ SRCS_DIR = src
 INCS_DIR = inc
 OBJS_DIR = obj
 
-SRC		= main.cpp Base.cpp A.cpp B.cpp C.cpp
+SRC		= main.cpp A.cpp B.cpp C.cpp Base.cpp
 SRCS	= $(addprefix $(SRCS_DIR)/, $(SRC))
 OBJS	= $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
 all:$(NAME)
 
 $(OBJS_DIR):
-mkdir -p $(OBJS_DIR)
+	mkdir -p $(OBJS_DIR)
 
 $(NAME):$(OBJS)
-$(CPP) $(CPP_FLG) $(OBJS) -o $@
+	$(CXX) $(CXX_FLG) $(OBJS) -o $@
 
 $(OBJS_DIR)/%.o:$(SRCS_DIR)/%.cpp | $(OBJS_DIR)
-$(CPP) $(CPP_FLG) -I $(INCS_DIR) -c $< -o $@
+	$(CXX) $(CXX_FLG) -I $(INCS_DIR) -c $< -o $@
 
 debug:
-$(MAKE) CPP_FLG="$(CPP_FLG) -DDEBUG]" re
+	$(MAKE) CXX_FLG="$(CXX_FLG) -DDEBUG" re
 
 clean:
-rm -rf $(OBJS)
-rm -rf $(OBJS_DIR)
+	rm -rf $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
-rm -rf $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
