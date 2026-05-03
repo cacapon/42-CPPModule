@@ -6,6 +6,9 @@
  *
  */
 
+#include <cstddef>
+#include <exception>
+
 template <typename T>
 Array<T>::Array() : _data(NULL), _size(0) {}
 
