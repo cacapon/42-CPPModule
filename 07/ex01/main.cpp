@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-#include "Iter.hpp"
+#include "iter.hpp"
 
 /* helper functions */
 template <typename T>
