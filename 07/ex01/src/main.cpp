@@ -12,7 +12,7 @@
 
 /* helper functions */
 template <typename T>
-void printn(const T& x) {
+void print(const T& x) {
     std::cout << x;
 }
 
@@ -24,12 +24,12 @@ int main() {
     const int b[] = {4, 5, 6};
     char c[] = {'a', 'b', 'c', 'd'};
 
-    ::iter(a, 3, printn);
+    ::iter(a, 3, print);
     std::cout << std::endl;
-    ::iter(b, 3, printn);
+    ::iter(b, 3, print);
     std::cout << std::endl;
     ::iter(c, 4, increment_char);
-    ::iter(c, 4, printn);
+    ::iter(c, 4, print);
     std::cout << std::endl;
     return 0;
 }
