@@ -1,12 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 12:58:16 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 12:58:17 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file easyfind.hpp
+ * @author cacapon (cacapon.project@gmail.com)
+ * @brief
+ * @date 2026-07-28
+ *
+ *
+ */
 
+#pragma once
+#include <exception>
+
+class IteratorNotFound : public std::exception {
+   public:
+    virtual const char* what() const throw();
+};
+
+template <typename T>
+typename T::iterator easyfind(T& container, int value);
+
+#include "easyfind.tpp"
