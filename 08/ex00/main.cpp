@@ -88,7 +88,7 @@ static void list_test() {
     int arr[] = {1, 1, 2, 2, 3, 3};
     std::list<int> list(arr, arr + 6);
     std::list<int>::iterator expected = list.begin();
-    std::advance(expected, 4);
+    std::advance(expected, 4);  // 1>
     test_output("list_test", ft_assert_eq(expected, easyfind(list, 3)));
 }
 
