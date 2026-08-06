@@ -128,6 +128,7 @@ static void large_test() {
 int main() {
     std::srand(static_cast<unsigned int>(std::time(NULL)));
 
+    std::cout << RAND_MAX << std::endl;
     normal_test();
     error_test();
     limit_test();
