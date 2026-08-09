@@ -1,12 +1,27 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/13 13:02:40 by ttsubo            #+#    #+#             */
-/*   Updated: 2025/07/13 13:02:41 by ttsubo           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/**
+ * @file RPN.hpp
+ * @author ttsubo (ttsubo@student.42.fr)
+ * @brief
+ * @date 2026-08-08
+ *
+ *
+ */
 
+#include <stack>
+#include <string>
+
+class RPN {
+private:
+    std::stack<int> _c;
+    bool _validateToken(const std::string& token) const;
+    bool _validateResult() const;
+
+    void _calc(const std::string& token);
+
+public:
+    RPN();
+    RPN(const RPN& other);
+    RPN& operator=(const RPN& other);
+    ~RPN();
+    int expr(const std::string& rpn_str);
+};
