@@ -6,7 +6,7 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 13:01:35 by ttsubo            #+#    #+#              #
-#    Updated: 2026/08/09 08:59:23 by ttsubo           ###   ########.fr        #
+#    Updated: 2026/08/09 09:18:18 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,4 +33,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+debug: CXX_FLG += -DDEBUG
+debug: re
+
+.PHONY: all clean fclean re debug

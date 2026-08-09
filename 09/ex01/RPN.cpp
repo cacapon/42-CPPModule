@@ -13,6 +13,29 @@
 #include <sstream>
 #include <stdexcept>
 
+RPN::RPNError::RPNError() : _detail("Error") {}
+
+RPN::RPNError::RPNError(const std::string& detail) : _detail(detail) {}
+
+RPN::RPNError::RPNError(const RPNError& other) : _detail(other._detail) {}
+
+RPN::RPNError& RPN::RPNError::operator=(const RPNError& other) {
+    if (&other != this) {
+        _detail = other._detail;
+    }
+    return *this;
+}
+
+RPN::RPNError::~RPNError() throw() {}
+
+const char* RPN::RPNError::what() const throw() {
+#ifdef DEBUG
+    return _detail.c_str();
+#else
+    return "Error";
+#endif
+}
+
 RPN::RPN() {}
 RPN::RPN(const RPN& other) : _c(other._c) {}
 RPN& RPN::operator=(const RPN& other) {
@@ -28,14 +51,13 @@ int RPN::expr(const std::string& rpn_str) {
     std::string token;
     while (iss >> token) {
         if (!_validateToken(token))
-            throw std::runtime_error("Error::expr::Invalid token:" + token);
+            throw RPNError("Error::expr::Invalid token:" + token);
         if (std::isdigit(token[0]))
             _c.push(token[0] - '0');
         else
             _calc(token);
     }
-    if (!_validateResult())
-        throw std::runtime_error("Error::expr::Two or more results");
+    if (!_validateResult()) throw RPNError("Error::expr::Two or more results");
     return _c.top();
 }
 
@@ -44,7 +66,7 @@ int RPN::expr(const std::string& rpn_str) {
     pre: token[0] == '/' and b != 0
 */
 void RPN::_calc(const std::string& token) {
-    if (_c.size() < 2) throw std::runtime_error("Error::_calc:: _c.size() < 2");
+    if (_c.size() < 2) throw RPNError("Error::_calc:: _c.size() < 2");
     int result = 0;
     int b = _c.top();
     _c.pop();
@@ -62,11 +84,11 @@ void RPN::_calc(const std::string& token) {
             result = a * b;
             break;
         case '/':
-            if (b == 0) throw std::runtime_error("Error::_calc:: 0 division.");
+            if (b == 0) throw RPNError("Error::_calc:: 0 division.");
             result = a / b;
             break;
         default:
-            throw std::runtime_error("Error::_calc::unknowntoken:" + token);
+            throw RPNError("Error::_calc::unknowntoken:" + token);
     }
     _c.push(result);
 }

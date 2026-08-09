@@ -22,6 +22,19 @@ private:
     void _calc(const std::string& token);
 
 public:
+    class RPNError : public std::exception {
+    public:
+        RPNError();
+        RPNError(const std::string& detail);
+        RPNError(const RPNError& other);
+        RPNError& operator=(const RPNError& other);
+        ~RPNError() throw();
+
+        const char* what() const throw();
+
+    private:
+        std::string _detail;
+    };
     RPN();
     RPN(const RPN& other);
     RPN& operator=(const RPN& other);
