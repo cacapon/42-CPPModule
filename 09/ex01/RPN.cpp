@@ -11,7 +11,6 @@
 
 #include <cctype>
 #include <sstream>
-#include <stdexcept>
 
 RPN::RPNError::RPNError() : _detail("Error") {}
 
