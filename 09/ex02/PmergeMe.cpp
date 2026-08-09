@@ -193,7 +193,6 @@ PmergeMe::~PmergeMe() {}
 
 void PmergeMe::run(int ac, char** av) {
     _parseInput(ac, av);
-    _printContainer("Before:\t", _vec);
 
     clock_t stVec = std::clock();
     std::vector<int> sortedVec = _sortVector(_vec);
@@ -202,8 +201,6 @@ void PmergeMe::run(int ac, char** av) {
     clock_t stLst = std::clock();
     std::list<int> sortedLst = _sortList(_lst);
     clock_t edLst = std::clock();
-
-    _printContainer("After:\t", sortedVec);
 
     if (sortedVec.size() != sortedLst.size() ||
         !std::equal(sortedVec.begin(), sortedVec.end(), sortedLst.begin())) {
@@ -214,6 +211,9 @@ void PmergeMe::run(int ac, char** av) {
         static_cast<double>(edVec - stVec) / CLOCKS_PER_SEC * 1000000.0;
     double elapsedLstUs =
         static_cast<double>(edLst - stLst) / CLOCKS_PER_SEC * 1000000.0;
+
+    _printContainer("Before:\t", _vec);
+    _printContainer("After:\t", sortedVec);
     std::cout << "Time to process a range of " << _vec.size()
               << " elements with std::[vector] : " << elapsedVecUs << " us"
               << std::endl;
