@@ -17,7 +17,6 @@
 #include <ctime>
 #include <iostream>
 #include <list>
-#include <stdexcept>
 #include <utility>
 #include <vector>
 
@@ -47,11 +46,12 @@ const char* PmergeMe::PmergeMeError::what() const throw() {
 #endif
 }
 
-std::vector<int> PmergeMe::_getInsertionOrder(int n) {
+std::vector<int> PmergeMe::_getInsertionOrder(size_t n) {
+    int nInt = static_cast<int>(n);
     std::vector<int> jacobsthal;
     jacobsthal.push_back(1);
     jacobsthal.push_back(1);
-    while (jacobsthal.back() < n) {
+    while (jacobsthal.back() < nInt) {
         int next = jacobsthal[jacobsthal.size() - 1] +
                    2 * jacobsthal[jacobsthal.size() - 2];
         jacobsthal.push_back(next);
@@ -61,7 +61,7 @@ std::vector<int> PmergeMe::_getInsertionOrder(int n) {
     order.push_back(1);
 
     for (size_t k = 2; k < jacobsthal.size(); ++k) {
-        int hi = std::min(jacobsthal[k], n);
+        int hi = std::min(jacobsthal[k], nInt);
         int lo = jacobsthal[k - 1] + 1;
         for (int i = hi; i >= lo; --i) {
             order.push_back(i);
@@ -86,7 +86,8 @@ void PmergeMe::_parseInput(int argc, char** argv) {
             throw PmergeMeError("_parseInput::Contains invalid characters");
         if (errno == ERANGE)
             throw PmergeMeError("_parseInput::Numbers greater than long");
-        if (value < 0) throw PmergeMeError("_parseInput::Not a natural number");
+        if (value <= 0)
+            throw PmergeMeError("_parseInput::Not a natural number");
         if (value > INT_MAX)
             throw PmergeMeError(
                 "_parseInput::Exceeded the maximum value for int");
@@ -203,6 +204,12 @@ void PmergeMe::run(int ac, char** av) {
     clock_t edLst = std::clock();
 
     _printContainer("After:\t", sortedVec);
+
+    if (sortedVec.size() != sortedLst.size() ||
+        !std::equal(sortedVec.begin(), sortedVec.end(), sortedLst.begin())) {
+        throw PmergeMeError("run::vector and list results mismatch");
+    }
+
     double elapsedVecUs =
         static_cast<double>(edVec - stVec) / CLOCKS_PER_SEC * 1000000.0;
     double elapsedLstUs =
