@@ -58,6 +58,7 @@ std::vector<int> PmergeMe::_getInsertionOrder(size_t n) {
     }
 
     std::vector<int> order;
+    if (n == 0) return order;
     order.push_back(1);
 
     for (size_t k = 2; k < jacobsthal.size(); ++k) {
