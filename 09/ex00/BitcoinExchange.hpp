@@ -7,12 +7,14 @@
  *
  */
 
-#pragma once
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
+
 #include <map>
 #include <string>
 
 class BitcoinExchange {
-   private:
+private:
     std::map<std::string, float> _bitCoinTable;
     BitcoinExchange();
     std::string _trim(const std::string&) const;
@@ -20,7 +22,7 @@ class BitcoinExchange {
     int _getLastDayOfMonth(int, int) const;
     float _getRate(const std::string&) const;
 
-   public:
+public:
     BitcoinExchange(const std::string&);
     BitcoinExchange(const BitcoinExchange&);
     BitcoinExchange& operator=(const BitcoinExchange&);
@@ -29,3 +31,5 @@ class BitcoinExchange {
     void loadDatabase(const std::string& path);
     void loadInputText(const std::string& path);
 };
+
+#endif
