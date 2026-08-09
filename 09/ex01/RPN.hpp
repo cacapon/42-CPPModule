@@ -7,6 +7,9 @@
  *
  */
 
+#ifndef RPN_HPP
+#define RPN_HPP
+
 #include <stack>
 #include <string>
 
@@ -25,3 +28,5 @@ public:
     ~RPN();
     int expr(const std::string& rpn_str);
 };
+
+#endif

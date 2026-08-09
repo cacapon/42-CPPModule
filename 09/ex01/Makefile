@@ -6,7 +6,7 @@
 #    By: ttsubo <ttsubo@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/13 13:01:35 by ttsubo            #+#    #+#              #
-#    Updated: 2026/08/09 08:21:23 by ttsubo           ###   ########.fr        #
+#    Updated: 2026/08/09 08:59:23 by ttsubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,6 @@ SRC		= main.cpp RPN.cpp
 OBJS	= $(SRC:%.cpp=%.o)
 
 all:$(NAME)
-
-$(OBJS_DIR):
-	mkdir -p $(OBJS_DIR)
 
 $(NAME):$(OBJS)
 	$(CXX) $(CXX_FLG) $(OBJS) -o $@
